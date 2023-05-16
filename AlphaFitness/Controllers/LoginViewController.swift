@@ -79,10 +79,42 @@ class LoginViewController: UIViewController {
         button.layer.cornerRadius = 8
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.white.cgColor
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
        // button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
+    
+    let fogotPassword : UILabel = {
+        let label = UILabel()
+        label.text = "Forgot Password?"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    let createAccount : UILabel = {
+        let label = UILabel()
+        label.text = "Don't have an account?"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        label.textAlignment = .right
+        return label
+    }()
+    
+    let signUpLabel : UILabel = {
+        let label = UILabel()
+        label.text = "Sign up"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.textAlignment = .left
+        return label
+    }()
+    
+    
     
 //    let divider : UIView = {
 //        let lineView = UIView(frame: CGRect(x: 10, y: 20, width: 100, height: 10))
@@ -113,6 +145,9 @@ class LoginViewController: UIViewController {
         view.addSubview(passLabel)
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
+        view.addSubview(fogotPassword)
+        view.addSubview(createAccount)
+        view.addSubview(signUpLabel)
 //        view.addSubview(divider)
         setConstraints()
         //addToSubView()
@@ -170,6 +205,28 @@ class LoginViewController: UIViewController {
             loginButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
+        NSLayoutConstraint.activate([
+            fogotPassword.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 30),
+            fogotPassword.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            fogotPassword.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+            //fogotPassword.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            createAccount.topAnchor.constraint(equalTo: fogotPassword.bottomAnchor, constant: 30),
+            createAccount.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            signUpLabel.topAnchor.constraint(equalTo: fogotPassword.bottomAnchor, constant: 30),
+            signUpLabel.leadingAnchor.constraint(equalTo: createAccount.trailingAnchor, constant: 5),
+            signUpLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+            //fogotPassword.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+//            signUpLabel.topAnchor.constraint(equalTo: fogotPassword.bottomAnchor, constant: 30),
+//            signUpLabel.leadingAnchor.constraint(equalTo: createAccount.trailingAnchor, constant: 5),
+//            signUpLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+            //fogotPassword.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
 //        NSLayoutConstraint.activate([
 //            divider.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 30),
 //            divider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),

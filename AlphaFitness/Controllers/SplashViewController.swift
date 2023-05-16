@@ -41,8 +41,8 @@ class SplashViewController: UIViewController {
             // Create the transition animation
             let transition = CATransition()
             transition.duration = 0.7
-            transition.type = .reveal
-            transition.subtype = .fromTop
+            transition.type = .fade
+//            transition.subtype = .fromTop
             self.navigationController?.view.layer.add(transition, forKey: kCATransition)
             
             let myViewController = GetStartedController()

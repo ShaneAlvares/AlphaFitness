@@ -16,6 +16,7 @@
 		5046CB1229C0D69A0052ABF4 /* ApiManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB1129C0D69A0052ABF4 /* ApiManger.swift */; };
 		5046CB1729C0DADD0052ABF4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB1629C0DADD0052ABF4 /* LoginViewController.swift */; };
 		5046CB1929C0DBD70052ABF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB1829C0DBD70052ABF4 /* MainViewController.swift */; };
+		505FCB592A129F2800E7673E /* FitnessLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505FCB582A129F2800E7673E /* FitnessLevelViewController.swift */; };
 		50B586E729C6013F00597B50 /* GetStartedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B586E629C6013F00597B50 /* GetStartedController.swift */; };
 		50B586EA29C604BE00597B50 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B586E929C604BE00597B50 /* AVFoundation.framework */; };
 		50B586F829C735AB00597B50 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B586F729C735AB00597B50 /* SplashViewController.swift */; };
@@ -35,6 +36,7 @@
 		5046CB1129C0D69A0052ABF4 /* ApiManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManger.swift; sourceTree = "<group>"; };
 		5046CB1629C0DADD0052ABF4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5046CB1829C0DBD70052ABF4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		505FCB582A129F2800E7673E /* FitnessLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessLevelViewController.swift; sourceTree = "<group>"; };
 		50B586E629C6013F00597B50 /* GetStartedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedController.swift; sourceTree = "<group>"; };
 		50B586E929C604BE00597B50 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		50B586F729C735AB00597B50 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				5046CB1829C0DBD70052ABF4 /* MainViewController.swift */,
 				50B586E629C6013F00597B50 /* GetStartedController.swift */,
 				50B586F729C735AB00597B50 /* SplashViewController.swift */,
+				505FCB582A129F2800E7673E /* FitnessLevelViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				5046CB1929C0DBD70052ABF4 /* MainViewController.swift in Sources */,
 				5046CB1729C0DADD0052ABF4 /* LoginViewController.swift in Sources */,
 				5046CB0F29C0D6180052ABF4 /* User.swift in Sources */,
+				505FCB592A129F2800E7673E /* FitnessLevelViewController.swift in Sources */,
 				50057CC429BCC01A00919FD3 /* AppDelegate.swift in Sources */,
 				5046CB1229C0D69A0052ABF4 /* ApiManger.swift in Sources */,
 				50057CC629BCC01A00919FD3 /* SceneDelegate.swift in Sources */,

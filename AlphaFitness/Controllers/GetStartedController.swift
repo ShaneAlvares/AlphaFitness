@@ -17,17 +17,17 @@ class GetStartedController: UIViewController, AVPlayerViewControllerDelegate {
     
     let headerLable : UILabel = {
        let label = UILabel()
-        label.text = "Start Your Journey to a\nStronger, Healthier life\nwith\nAlpha Fitness"
+        label.text = "Start Your Journey\nToday with\nAlpha Fitness"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.white
-        label.font = UIFont.systemFont(ofSize: 25.0, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 30.0, weight: .heavy)
         label.numberOfLines = 0
         return label
     }()
     
     let smallLable : UILabel = {
        let label = UILabel()
-        label.text = "Set the goals you’re striving towards,\nbe it losing fat, getting a muscular body,\nor improving your endurance"
+        label.text = "Set the goals you’re striving towards,\nbe it losing fat, getting a muscular body,\nor improving your endurance."
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: 18.0, weight: .semibold)
@@ -71,30 +71,26 @@ class GetStartedController: UIViewController, AVPlayerViewControllerDelegate {
         NSLayoutConstraint.activate([
             headerLable.topAnchor.constraint(equalTo: view.topAnchor, constant: 90),
             headerLable.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            headerLable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 20),
+            headerLable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             //headerLable.widthAnchor.constraint(equalToConstant: 300)
         ])
         NSLayoutConstraint.activate([
             smallLable.topAnchor.constraint(equalTo: headerLable.bottomAnchor, constant: 20),
             smallLable.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            smallLable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 20)
+            smallLable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
             //smallLable.widthAnchor.constraint(equalToConstant: )
         ])
-        
         NSLayoutConstraint.activate([
-            getStartedButton.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -150),
+            getStartedButton.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             getStartedButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            getStartedButton.widthAnchor.constraint(equalToConstant: 300),
+            //getStartedButton.widthAnchor.constraint(equalToConstant: 300),
+            getStartedButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            getStartedButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             getStartedButton.heightAnchor.constraint(equalToConstant: 60)
         ])
-        
-        
     }
     
-    
-    
     func viewPlayer(){
-        
         // Create the video player
         let videoURL = Bundle.main.url(forResource: "jumpingBox", withExtension: "mp4")!
         let asset = AVAsset(url: videoURL)
