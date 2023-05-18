@@ -16,15 +16,25 @@
 		5046CB1229C0D69A0052ABF4 /* ApiManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB1129C0D69A0052ABF4 /* ApiManger.swift */; };
 		5046CB1729C0DADD0052ABF4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB1629C0DADD0052ABF4 /* LoginViewController.swift */; };
 		5046CB1929C0DBD70052ABF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB1829C0DBD70052ABF4 /* MainViewController.swift */; };
+		505B89FE2A15192300F324FA /* FitnessGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B89FD2A15192300F324FA /* FitnessGoalViewController.swift */; };
+		505B8A022A151D4800F324FA /* HeightSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A012A151D4800F324FA /* HeightSelectionViewController.swift */; };
+		505B8A062A151EB900F324FA /* TestTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A052A151EB900F324FA /* TestTempViewController.swift */; };
+		505B8A082A15545D00F324FA /* WeightSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A072A15545D00F324FA /* WeightSelectionViewController.swift */; };
+		505B8A0B2A1557B500F324FA /* GenderSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A0A2A1557B500F324FA /* GenderSelectionViewController.swift */; };
+		505B8A0D2A1557D600F324FA /* GeneralInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A0C2A1557D600F324FA /* GeneralInfoViewController.swift */; };
+		505B8A0F2A1569C700F324FA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A0E2A1569C700F324FA /* SignInViewController.swift */; };
+		505B8A112A156D3A00F324FA /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A102A156D3A00F324FA /* ForgetPasswordViewController.swift */; };
 		505FCB592A129F2800E7673E /* FitnessLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505FCB582A129F2800E7673E /* FitnessLevelViewController.swift */; };
 		50B586E729C6013F00597B50 /* GetStartedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B586E629C6013F00597B50 /* GetStartedController.swift */; };
 		50B586EA29C604BE00597B50 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B586E929C604BE00597B50 /* AVFoundation.framework */; };
 		50B586F829C735AB00597B50 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B586F729C735AB00597B50 /* SplashViewController.swift */; };
 		50B586FA29C7811500597B50 /* jumpingBox.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 50B586F929C7811500597B50 /* jumpingBox.mp4 */; };
 		50B586FC29C79A2300597B50 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B586FB29C79A2300597B50 /* TestViewController.swift */; };
+		969186EB7F375F9A415D7F95 /* Pods_AlphaFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F010282C90B4EE63CFF68A /* Pods_AlphaFitness.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41F010282C90B4EE63CFF68A /* Pods_AlphaFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlphaFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50057CC029BCC01A00919FD3 /* AlphaFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphaFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50057CC329BCC01A00919FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50057CC529BCC01A00919FD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,12 +46,22 @@
 		5046CB1129C0D69A0052ABF4 /* ApiManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManger.swift; sourceTree = "<group>"; };
 		5046CB1629C0DADD0052ABF4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5046CB1829C0DBD70052ABF4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		505B89FD2A15192300F324FA /* FitnessGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessGoalViewController.swift; sourceTree = "<group>"; };
+		505B8A012A151D4800F324FA /* HeightSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightSelectionViewController.swift; sourceTree = "<group>"; };
+		505B8A052A151EB900F324FA /* TestTempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTempViewController.swift; sourceTree = "<group>"; };
+		505B8A072A15545D00F324FA /* WeightSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightSelectionViewController.swift; sourceTree = "<group>"; };
+		505B8A0A2A1557B500F324FA /* GenderSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectionViewController.swift; sourceTree = "<group>"; };
+		505B8A0C2A1557D600F324FA /* GeneralInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralInfoViewController.swift; sourceTree = "<group>"; };
+		505B8A0E2A1569C700F324FA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		505B8A102A156D3A00F324FA /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		505FCB582A129F2800E7673E /* FitnessLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessLevelViewController.swift; sourceTree = "<group>"; };
 		50B586E629C6013F00597B50 /* GetStartedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedController.swift; sourceTree = "<group>"; };
 		50B586E929C604BE00597B50 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		50B586F729C735AB00597B50 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		50B586F929C7811500597B50 /* jumpingBox.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = jumpingBox.mp4; path = ../../../../Downloads/jumpingBox.mp4; sourceTree = "<group>"; };
 		50B586FB29C79A2300597B50 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		9742253FBEFD853EAE273D65 /* Pods-AlphaFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaFitness.debug.xcconfig"; path = "Target Support Files/Pods-AlphaFitness/Pods-AlphaFitness.debug.xcconfig"; sourceTree = "<group>"; };
+		9C2BB77F334C3CACFA9093D3 /* Pods-AlphaFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaFitness.release.xcconfig"; path = "Target Support Files/Pods-AlphaFitness/Pods-AlphaFitness.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B586EA29C604BE00597B50 /* AVFoundation.framework in Frameworks */,
+				969186EB7F375F9A415D7F95 /* Pods_AlphaFitness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +84,7 @@
 				50057CC229BCC01A00919FD3 /* AlphaFitness */,
 				50057CC129BCC01A00919FD3 /* Products */,
 				50B586E829C604BE00597B50 /* Frameworks */,
+				5493ADB426F31795ADED7761 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +153,14 @@
 				50B586E629C6013F00597B50 /* GetStartedController.swift */,
 				50B586F729C735AB00597B50 /* SplashViewController.swift */,
 				505FCB582A129F2800E7673E /* FitnessLevelViewController.swift */,
+				505B89FD2A15192300F324FA /* FitnessGoalViewController.swift */,
+				505B8A012A151D4800F324FA /* HeightSelectionViewController.swift */,
+				505B8A052A151EB900F324FA /* TestTempViewController.swift */,
+				505B8A072A15545D00F324FA /* WeightSelectionViewController.swift */,
+				505B8A0A2A1557B500F324FA /* GenderSelectionViewController.swift */,
+				505B8A0C2A1557D600F324FA /* GeneralInfoViewController.swift */,
+				505B8A0E2A1569C700F324FA /* SignInViewController.swift */,
+				505B8A102A156D3A00F324FA /* ForgetPasswordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -139,8 +169,18 @@
 			isa = PBXGroup;
 			children = (
 				50B586E929C604BE00597B50 /* AVFoundation.framework */,
+				41F010282C90B4EE63CFF68A /* Pods_AlphaFitness.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5493ADB426F31795ADED7761 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9742253FBEFD853EAE273D65 /* Pods-AlphaFitness.debug.xcconfig */,
+				9C2BB77F334C3CACFA9093D3 /* Pods-AlphaFitness.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50057CD429BCC01B00919FD3 /* Build configuration list for PBXNativeTarget "AlphaFitness" */;
 			buildPhases = (
+				0CF73E18B2E5B648BBB6446E /* [CP] Check Pods Manifest.lock */,
 				50057CBC29BCC01A00919FD3 /* Sources */,
 				50057CBD29BCC01A00919FD3 /* Frameworks */,
 				50057CBE29BCC01A00919FD3 /* Resources */,
+				897663B1FC5105B61732AF0C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,20 +252,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0CF73E18B2E5B648BBB6446E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlphaFitness-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		897663B1FC5105B61732AF0C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlphaFitness/Pods-AlphaFitness-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlphaFitness/Pods-AlphaFitness-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlphaFitness/Pods-AlphaFitness-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		50057CBC29BCC01A00919FD3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505B8A022A151D4800F324FA /* HeightSelectionViewController.swift in Sources */,
 				50B586E729C6013F00597B50 /* GetStartedController.swift in Sources */,
 				5046CB1929C0DBD70052ABF4 /* MainViewController.swift in Sources */,
+				505B8A0D2A1557D600F324FA /* GeneralInfoViewController.swift in Sources */,
+				505B8A112A156D3A00F324FA /* ForgetPasswordViewController.swift in Sources */,
 				5046CB1729C0DADD0052ABF4 /* LoginViewController.swift in Sources */,
+				505B8A0B2A1557B500F324FA /* GenderSelectionViewController.swift in Sources */,
 				5046CB0F29C0D6180052ABF4 /* User.swift in Sources */,
+				505B8A0F2A1569C700F324FA /* SignInViewController.swift in Sources */,
 				505FCB592A129F2800E7673E /* FitnessLevelViewController.swift in Sources */,
 				50057CC429BCC01A00919FD3 /* AppDelegate.swift in Sources */,
+				505B8A082A15545D00F324FA /* WeightSelectionViewController.swift in Sources */,
 				5046CB1229C0D69A0052ABF4 /* ApiManger.swift in Sources */,
+				505B8A062A151EB900F324FA /* TestTempViewController.swift in Sources */,
 				50057CC629BCC01A00919FD3 /* SceneDelegate.swift in Sources */,
 				50B586FC29C79A2300597B50 /* TestViewController.swift in Sources */,
+				505B89FE2A15192300F324FA /* FitnessGoalViewController.swift in Sources */,
 				50B586F829C735AB00597B50 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +458,7 @@
 		};
 		50057CD529BCC01B00919FD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9742253FBEFD853EAE273D65 /* Pods-AlphaFitness.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -395,6 +488,7 @@
 		};
 		50057CD629BCC01B00919FD3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C2BB77F334C3CACFA9093D3 /* Pods-AlphaFitness.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

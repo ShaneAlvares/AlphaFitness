@@ -43,10 +43,10 @@ class GetStartedController: UIViewController, AVPlayerViewControllerDelegate {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("GET STARTED", for: .normal)
         btn.setTitleShadowColor(UIColor.black, for: .normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 20.0, weight: .bold)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 20.0, weight: .heavy)
         btn.setTitleColor(.black, for: .normal)
         btn.backgroundColor = .white
-        btn.layer.cornerRadius = 15
+        btn.layer.cornerRadius = 10
         btn.layer.borderColor = UIColor.black.cgColor
         btn.layer.borderWidth = 1
         btn.isHidden = true

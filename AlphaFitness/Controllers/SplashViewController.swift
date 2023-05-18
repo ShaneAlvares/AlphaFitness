@@ -6,19 +6,29 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SplashViewController: UIViewController {
     
-    let appLogo : UIImageView = {
+//    let appLogo : UIImageView = {
+//        let logo = UIImageView()
+//        logo.translatesAutoresizingMaskIntoConstraints = false
+//        logo.contentMode = .scaleAspectFill
+//        logo.image = UIImage.gifImageWithName("aplhaLogo")
+//        return logo
+//    }()
+    
+    let appLogo: UIImageView = {
         let logo = UIImageView()
         logo.translatesAutoresizingMaskIntoConstraints = false
         logo.contentMode = .scaleAspectFill
-        logo.image = UIImage(named: "aplhaLogo")
+        logo.sd_setImage(with: URL(string: "https://annesuppliers.com/Shane/IOSCW/newlogo.gif"), placeholderImage: nil, options: [], completed: nil)
         return logo
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         view.addSubview(appLogo)
         addConstraints()
         //moveNext()

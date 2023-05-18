@@ -1,0 +1,6 @@
+framework module Pods_AlphaFitness {
+  umbrella header "Pods-AlphaFitness-umbrella.h"
+
+  export *
+  module * { export * }
+}

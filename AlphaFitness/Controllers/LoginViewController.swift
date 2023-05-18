@@ -9,17 +9,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    let appLogo : UIImageView = {
-        let logo = UIImageView()
-        logo.translatesAutoresizingMaskIntoConstraints = false
-        logo.contentMode = .scaleAspectFit
-        logo.image = UIImage(named: "gymMen")
-        return logo
-    }()
-    
     let loginHeader : UILabel = {
         let label = UILabel()
-        label.text = "Hey, \nWelcome back!"
+        label.text = "Log In"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 20,weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -27,45 +19,29 @@ class LoginViewController: UIViewController {
         return label
     }()
     
-    let emailLabel : UILabel = {
-       let label = UILabel()
-        label.text = "Email Address"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.gray
-        label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
-        return label
-    }()
     
     let emailTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Enter your Email Address"
+        textField.placeholder = "Email Address"
         textField.layer.backgroundColor = UIColor.systemFill.cgColor
-        textField.layer.cornerRadius = 6
+        textField.layer.cornerRadius = 3
         //UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20));
         textField.leftViewMode = .always;
         return textField
     }()
     
-    let passLabel : UILabel = {
-       let label = UILabel()
-        label.text = "Password"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.gray
-        label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
-        return label
-    }()
-    
     let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Enter your Password"
+        textField.placeholder = "Password"
         textField.layer.backgroundColor = UIColor.systemFill.cgColor
-        textField.layer.cornerRadius = 6
+        textField.layer.cornerRadius = 3
         //UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20));
         textField.leftViewMode = .always;
+        textField.isSecureTextEntry = true
         
         return textField
     }()
@@ -76,53 +52,49 @@ class LoginViewController: UIViewController {
         button.setTitle("LOGIN", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .black
-        button.layer.cornerRadius = 8
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.white.cgColor
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        button.layer.cornerRadius = 4
+        button.layer.borderWidth = 3
+        button.layer.borderColor = UIColor.black.cgColor
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
        // button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
+    
+    let divider : UIView = {
+        let divider = UIView()
+        divider.backgroundColor = UIColor.gray
+        divider.translatesAutoresizingMaskIntoConstraints = false
+        
+        return divider
+    }()
+    
+    let signUpButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("SIGN UP", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 4
+        button.layer.borderWidth = 3
+        button.layer.borderColor = UIColor.black.cgColor
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
+       // button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
     
     let fogotPassword : UILabel = {
         let label = UILabel()
         label.text = "Forgot Password?"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         label.textAlignment = .center
         return label
     }()
     
-    let createAccount : UILabel = {
-        let label = UILabel()
-        label.text = "Don't have an account?"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
-        label.textAlignment = .right
-        return label
-    }()
     
-    let signUpLabel : UILabel = {
-        let label = UILabel()
-        label.text = "Sign up"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-        label.textAlignment = .left
-        return label
-    }()
-    
-    
-    
-//    let divider : UIView = {
-//        let lineView = UIView(frame: CGRect(x: 10, y: 20, width: 100, height: 10))
-//        lineView.layer.borderWidth = 1.0
-//        lineView.layer.borderColor = UIColor.black.cgColor
-//
-//        return lineView
-//    }()
+ 
     
     let errorLabel: UILabel = {
         let label = UILabel()
@@ -138,20 +110,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(appLogo)
         view.addSubview(loginHeader)
-        view.addSubview(emailLabel)
         view.addSubview(emailTextField)
-        view.addSubview(passLabel)
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
+        view.addSubview(divider)
+        view.addSubview(signUpButton)
         view.addSubview(fogotPassword)
-        view.addSubview(createAccount)
-        view.addSubview(signUpLabel)
-//        view.addSubview(divider)
         setConstraints()
-        //addToSubView()
-        //addConstraints()
         
         
     }
@@ -159,42 +125,28 @@ class LoginViewController: UIViewController {
     
     func setConstraints(){
         
-        NSLayoutConstraint.activate([
-            appLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
-            appLogo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            appLogo.heightAnchor.constraint(equalToConstant: 120),
-            appLogo.widthAnchor.constraint(equalToConstant: 120)
-        ])
+        
         
         NSLayoutConstraint.activate([
-            loginHeader.centerYAnchor.constraint(equalTo: appLogo.centerYAnchor),
-            loginHeader.leadingAnchor.constraint(equalTo: appLogo.trailingAnchor, constant: 15)
+            loginHeader.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            loginHeader.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        NSLayoutConstraint.activate([
-            emailLabel.topAnchor.constraint(equalTo: appLogo.bottomAnchor, constant: 30),
-            emailLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            emailLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 30)
-        ])
         
         NSLayoutConstraint.activate([
-            emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 5),
+            emailTextField.topAnchor.constraint(equalTo:loginHeader.bottomAnchor, constant: 30),
             emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            emailTextField.heightAnchor.constraint(equalToConstant: 40)
+            emailTextField.heightAnchor.constraint(equalToConstant: 45)
         ])
         
-        NSLayoutConstraint.activate([
-            passLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
-            passLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            passLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 30)
-        ])
+       
         
         NSLayoutConstraint.activate([
-            passwordTextField.topAnchor.constraint(equalTo: passLabel.bottomAnchor, constant: 5),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 30),
             passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 40)
+            passwordTextField.heightAnchor.constraint(equalToConstant: 45)
         ])
         
         
@@ -206,34 +158,25 @@ class LoginViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            fogotPassword.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 30),
-            fogotPassword.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            fogotPassword.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+            fogotPassword.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 10),
+            fogotPassword.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
             //fogotPassword.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            createAccount.topAnchor.constraint(equalTo: fogotPassword.bottomAnchor, constant: 30),
-            createAccount.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            signUpLabel.topAnchor.constraint(equalTo: fogotPassword.bottomAnchor, constant: 30),
-            signUpLabel.leadingAnchor.constraint(equalTo: createAccount.trailingAnchor, constant: 5),
-            signUpLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
-            //fogotPassword.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            divider.bottomAnchor.constraint(equalTo: fogotPassword.bottomAnchor, constant: 20),
+            divider.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            divider.heightAnchor.constraint(equalToConstant: 2),
+            divider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 70),
+            divider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
         ])
         
         NSLayoutConstraint.activate([
-//            signUpLabel.topAnchor.constraint(equalTo: fogotPassword.bottomAnchor, constant: 30),
-//            signUpLabel.leadingAnchor.constraint(equalTo: createAccount.trailingAnchor, constant: 5),
-//            signUpLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
-            //fogotPassword.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            signUpButton.topAnchor.constraint(equalTo: divider.bottomAnchor, constant: 20),
+            signUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            signUpButton.heightAnchor.constraint(equalToConstant: 50),
         ])
-//        NSLayoutConstraint.activate([
-//            divider.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 30),
-//            divider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-//            divider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-//            divider.heightAnchor.constraint(equalToConstant: 20)
-//        ])
-        
         
     }
     
