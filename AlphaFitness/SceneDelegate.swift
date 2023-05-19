@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let scene = scene as? UIWindowScene else { return }
         let myWindow = UIWindow(windowScene: scene)
-        let view = UINavigationController(rootViewController: TestTempViewController()) // Change with first view Controller
+        let view = UINavigationController(rootViewController: BottomNavBarController()) // Change with first view Controller
         myWindow.rootViewController = view
         self.window = myWindow
         myWindow.makeKeyAndVisible()

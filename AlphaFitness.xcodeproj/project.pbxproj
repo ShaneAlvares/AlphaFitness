@@ -12,6 +12,9 @@
 		50057CCB29BCC01A00919FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50057CC929BCC01A00919FD3 /* Main.storyboard */; };
 		50057CCD29BCC01B00919FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50057CCC29BCC01B00919FD3 /* Assets.xcassets */; };
 		50057CD029BCC01B00919FD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50057CCE29BCC01B00919FD3 /* LaunchScreen.storyboard */; };
+		500973D12A1736C200801224 /* CircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500973D02A1736C200801224 /* CircularProgress.swift */; };
+		500DD02D2A178FDC001C84EA /* BottomNavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DD02C2A178FDC001C84EA /* BottomNavBarController.swift */; };
+		500DD02F2A179986001C84EA /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DD02E2A179986001C84EA /* TitleView.swift */; };
 		5046CB0F29C0D6180052ABF4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB0E29C0D6180052ABF4 /* User.swift */; };
 		5046CB1229C0D69A0052ABF4 /* ApiManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB1129C0D69A0052ABF4 /* ApiManger.swift */; };
 		5046CB1729C0DADD0052ABF4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB1629C0DADD0052ABF4 /* LoginViewController.swift */; };
@@ -24,6 +27,8 @@
 		505B8A0D2A1557D600F324FA /* GeneralInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A0C2A1557D600F324FA /* GeneralInfoViewController.swift */; };
 		505B8A0F2A1569C700F324FA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A0E2A1569C700F324FA /* SignInViewController.swift */; };
 		505B8A112A156D3A00F324FA /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A102A156D3A00F324FA /* ForgetPasswordViewController.swift */; };
+		505B8A132A16A65D00F324FA /* TestTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A122A16A65D00F324FA /* TestTwoViewController.swift */; };
+		505B8A152A16A72400F324FA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A142A16A72400F324FA /* CardView.swift */; };
 		505FCB592A129F2800E7673E /* FitnessLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505FCB582A129F2800E7673E /* FitnessLevelViewController.swift */; };
 		50B586E729C6013F00597B50 /* GetStartedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B586E629C6013F00597B50 /* GetStartedController.swift */; };
 		50B586EA29C604BE00597B50 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B586E929C604BE00597B50 /* AVFoundation.framework */; };
@@ -42,6 +47,9 @@
 		50057CCC29BCC01B00919FD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50057CCF29BCC01B00919FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50057CD129BCC01B00919FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		500973D02A1736C200801224 /* CircularProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
+		500DD02C2A178FDC001C84EA /* BottomNavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavBarController.swift; sourceTree = "<group>"; };
+		500DD02E2A179986001C84EA /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		5046CB0E29C0D6180052ABF4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5046CB1129C0D69A0052ABF4 /* ApiManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManger.swift; sourceTree = "<group>"; };
 		5046CB1629C0DADD0052ABF4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +62,8 @@
 		505B8A0C2A1557D600F324FA /* GeneralInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralInfoViewController.swift; sourceTree = "<group>"; };
 		505B8A0E2A1569C700F324FA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		505B8A102A156D3A00F324FA /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		505B8A122A16A65D00F324FA /* TestTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTwoViewController.swift; sourceTree = "<group>"; };
+		505B8A142A16A72400F324FA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		505FCB582A129F2800E7673E /* FitnessLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessLevelViewController.swift; sourceTree = "<group>"; };
 		50B586E629C6013F00597B50 /* GetStartedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedController.swift; sourceTree = "<group>"; };
 		50B586E929C604BE00597B50 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -126,6 +136,9 @@
 		5046CB0829C0D5290052ABF4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				505B8A142A16A72400F324FA /* CardView.swift */,
+				500973D02A1736C200801224 /* CircularProgress.swift */,
+				500DD02E2A179986001C84EA /* TitleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +174,8 @@
 				505B8A0C2A1557D600F324FA /* GeneralInfoViewController.swift */,
 				505B8A0E2A1569C700F324FA /* SignInViewController.swift */,
 				505B8A102A156D3A00F324FA /* ForgetPasswordViewController.swift */,
+				505B8A122A16A65D00F324FA /* TestTwoViewController.swift */,
+				500DD02C2A178FDC001C84EA /* BottomNavBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -311,9 +326,14 @@
 				505FCB592A129F2800E7673E /* FitnessLevelViewController.swift in Sources */,
 				50057CC429BCC01A00919FD3 /* AppDelegate.swift in Sources */,
 				505B8A082A15545D00F324FA /* WeightSelectionViewController.swift in Sources */,
+				505B8A132A16A65D00F324FA /* TestTwoViewController.swift in Sources */,
 				5046CB1229C0D69A0052ABF4 /* ApiManger.swift in Sources */,
+				505B8A152A16A72400F324FA /* CardView.swift in Sources */,
+				500DD02F2A179986001C84EA /* TitleView.swift in Sources */,
 				505B8A062A151EB900F324FA /* TestTempViewController.swift in Sources */,
+				500973D12A1736C200801224 /* CircularProgress.swift in Sources */,
 				50057CC629BCC01A00919FD3 /* SceneDelegate.swift in Sources */,
+				500DD02D2A178FDC001C84EA /* BottomNavBarController.swift in Sources */,
 				50B586FC29C79A2300597B50 /* TestViewController.swift in Sources */,
 				505B89FE2A15192300F324FA /* FitnessGoalViewController.swift in Sources */,
 				50B586F829C735AB00597B50 /* SplashViewController.swift in Sources */,
