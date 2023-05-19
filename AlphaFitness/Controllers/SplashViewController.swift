@@ -6,53 +6,51 @@
 //
 
 import UIKit
-import SDWebImage
+//import SDWebImage
 
 class SplashViewController: UIViewController {
     
-//    let appLogo : UIImageView = {
-//        let logo = UIImageView()
-//        logo.translatesAutoresizingMaskIntoConstraints = false
-//        logo.contentMode = .scaleAspectFill
-//        logo.image = UIImage.gifImageWithName("aplhaLogo")
-//        return logo
-//    }()
+    //    let appLogo : UIImageView = {
+    //        let logo = UIImageView()
+    //        logo.translatesAutoresizingMaskIntoConstraints = false
+    //        logo.contentMode = .scaleAspectFill
+    //        logo.image = UIImage.gifImageWithName("aplhaLogo")
+    //        return logo
+    //    }()
     
-    let appLogo: UIImageView = {
-        let logo = UIImageView()
-        logo.translatesAutoresizingMaskIntoConstraints = false
-        logo.contentMode = .scaleAspectFill
-        logo.sd_setImage(with: URL(string: "https://annesuppliers.com/Shane/IOSCW/newlogo.gif"), placeholderImage: nil, options: [], completed: nil)
-        return logo
+    let logoName : UILabel = {
+        let label = UILabel()
+        label.text = "ALPHA FITNESS"
+        label.textColor = .label
+        label.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
-
+    
+    //    let appLogo: UIImageView = {
+    //        let logo = UIImageView()
+    //        logo.translatesAutoresizingMaskIntoConstraints = false
+    //        logo.contentMode = .scaleAspectFill
+    //        logo.sd_setImage(with: URL(string: "https://annesuppliers.com/Shane/IOSCW/newlogo.gif"), placeholderImage: nil, options: [], completed: nil)
+    //        return logo
+    //    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        view.addSubview(appLogo)
+        view.backgroundColor = .systemBackground
+        view.addSubview(logoName)
         addConstraints()
-        //moveNext()
-        
-        // Do any additional setup after loading the view.
     }
     
     func moveNext(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            // Code to run after 2 seconds
-            //adding to navigation stack
-            // self.navigationController?.pushViewController(GetStartedController(), animated: true)
-            
-            //can we used as a popup
-            //let myViewController = GetStartedController()
-            //self.present(myViewController, animated: true, completion: nil) commet - this is like a pop up modal
-            
             //without navigation stack move to another screen
             //also can add custom trasision
             // Create the transition animation
             let transition = CATransition()
             transition.duration = 0.7
             transition.type = .fade
-//            transition.subtype = .fromTop
+            //transition.subtype = .fromTop
             self.navigationController?.view.layer.add(transition, forKey: kCATransition)
             
             let myViewController = GetStartedController()
@@ -63,10 +61,8 @@ class SplashViewController: UIViewController {
     
     func addConstraints(){
         NSLayoutConstraint.activate([
-            appLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            appLogo.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            appLogo.widthAnchor.constraint(equalToConstant: 150),
-            appLogo.heightAnchor.constraint(equalToConstant: 150)
+            logoName.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoName.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
@@ -74,15 +70,15 @@ class SplashViewController: UIViewController {
         moveNext()
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

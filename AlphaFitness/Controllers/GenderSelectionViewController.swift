@@ -9,10 +9,10 @@ import UIKit
 
 class GenderSelectionViewController:UIViewController {
     let pageLabel : UILabel = {
-       let label = UILabel()
-        label.text = "5 of 5"
+        let label = UILabel()
+        label.text = "1 of 5"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.gray
+        label.textColor = UIColor.systemGray2
         label.font = UIFont.systemFont(ofSize: 15.0, weight: .semibold)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -20,10 +20,10 @@ class GenderSelectionViewController:UIViewController {
     }()
     
     let questionLabel : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "What is your gender?"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.black
+        label.textColor = UIColor.label
         label.font = UIFont.systemFont(ofSize: 20.0, weight: .medium)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -31,10 +31,10 @@ class GenderSelectionViewController:UIViewController {
     }()
     
     let infoLabel : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "This is important for tailoring fitness programs and recommendations to account for physiological differences and specific needs between males and females."
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.gray
+        label.textColor = UIColor.systemGray3
         label.font = UIFont.systemFont(ofSize: 17.0, weight: .medium)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -44,7 +44,7 @@ class GenderSelectionViewController:UIViewController {
     
     let dividerView : UIView = {
         let divider = UIView()
-        divider.backgroundColor = UIColor.gray
+        divider.backgroundColor = UIColor.systemGray2
         divider.translatesAutoresizingMaskIntoConstraints = false
         
         return divider
@@ -52,7 +52,7 @@ class GenderSelectionViewController:UIViewController {
     
     let dividerVerticalView : UIView = {
         let divider = UIView()
-        divider.backgroundColor = UIColor.gray
+        divider.backgroundColor = UIColor.systemGray2
         divider.translatesAutoresizingMaskIntoConstraints = false
         
         return divider
@@ -66,7 +66,8 @@ class GenderSelectionViewController:UIViewController {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setImage(backArr, for: .normal)
-        btn.tintColor = .gray
+        btn.tintColor = .systemGray2
+        btn.addTarget(self, action: #selector(gotoSignIn), for: .touchUpInside)
         return btn
     }()
     
@@ -77,7 +78,8 @@ class GenderSelectionViewController:UIViewController {
         btn.setTitleShadowColor(UIColor.systemBlue, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
         btn.setTitleColor(.systemBlue, for: .normal)
-      return btn
+        btn.addTarget(self, action: #selector(gotoFitLevel), for: .touchUpInside)
+        return btn
     }()
     
     let btnMale : UIButton = {
@@ -87,7 +89,7 @@ class GenderSelectionViewController:UIViewController {
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         btn.setTitleColor(UIColor.black, for: .normal)
         btn.backgroundColor = .white
-        btn.layer.borderColor = UIColor.black.cgColor
+        btn.layer.borderColor = UIColor.label.cgColor
         btn.layer.borderWidth = 1
         btn.layer.cornerRadius = 15
         
@@ -102,7 +104,7 @@ class GenderSelectionViewController:UIViewController {
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         btn.setTitleColor(UIColor.black, for: .normal)
         btn.backgroundColor = .white
-        btn.layer.borderColor = UIColor.black.cgColor
+        btn.layer.borderColor = UIColor.label.cgColor
         btn.layer.borderWidth = 1
         btn.layer.cornerRadius = 10
         
@@ -111,10 +113,11 @@ class GenderSelectionViewController:UIViewController {
     }()
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        navigationItem.hidesBackButton = true
+        view.backgroundColor = .systemBackground
         view.addSubview(pageLabel)
         view.addSubview(questionLabel)
         view.addSubview(infoLabel)
@@ -199,7 +202,7 @@ class GenderSelectionViewController:UIViewController {
             btnFemale.widthAnchor.constraint(equalTo: btnMale.widthAnchor)
         ])
         
-       
+        
         
     }
     
@@ -222,15 +225,25 @@ class GenderSelectionViewController:UIViewController {
         
         sender.layer.insertSublayer(gradientLayer, at: 0)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @objc func gotoFitLevel(){
+        let controller = FitnessLevelViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
-    */
-
+    
+    @objc func gotoSignIn(){
+        let controller = SignInViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

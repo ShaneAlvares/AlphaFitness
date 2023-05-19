@@ -11,9 +11,9 @@ class FitnessGoalViewController: UIViewController {
     
     let pageLabel : UILabel = {
        let label = UILabel()
-        label.text = "2 of 5"
+        label.text = "3 of 5"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.gray
+        label.textColor = UIColor.systemGray2
         label.font = UIFont.systemFont(ofSize: 15.0, weight: .semibold)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -24,7 +24,7 @@ class FitnessGoalViewController: UIViewController {
        let label = UILabel()
         label.text = "What is your fitness goal?"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.black
+        label.textColor = UIColor.label
         label.font = UIFont.systemFont(ofSize: 20.0, weight: .medium)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -35,7 +35,7 @@ class FitnessGoalViewController: UIViewController {
        let label = UILabel()
         label.text = "This helps us tailor our approach, create personalized plans, and provide the necessary motivation and direction to achieve desired results."
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.gray
+        label.textColor = UIColor.systemGray3
         label.font = UIFont.systemFont(ofSize: 17.0, weight: .medium)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -45,7 +45,7 @@ class FitnessGoalViewController: UIViewController {
     
     let dividerView : UIView = {
         let divider = UIView()
-        divider.backgroundColor = UIColor.gray
+        divider.backgroundColor = UIColor.systemGray2
         divider.translatesAutoresizingMaskIntoConstraints = false
         
         return divider
@@ -53,7 +53,7 @@ class FitnessGoalViewController: UIViewController {
     
     let dividerVerticalView : UIView = {
         let divider = UIView()
-        divider.backgroundColor = UIColor.gray
+        divider.backgroundColor = UIColor.systemGray2
         divider.translatesAutoresizingMaskIntoConstraints = false
         
         return divider
@@ -67,7 +67,8 @@ class FitnessGoalViewController: UIViewController {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setImage(backArr, for: .normal)
-        btn.tintColor = .gray
+        btn.tintColor = .systemGray2
+        btn.addTarget(self, action: #selector(gotoFitLevelSelection), for: .touchUpInside)
         return btn
     }()
     
@@ -78,6 +79,7 @@ class FitnessGoalViewController: UIViewController {
         btn.setTitleShadowColor(UIColor.systemBlue, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
         btn.setTitleColor(.systemBlue, for: .normal)
+        btn.addTarget(self, action: #selector(gotoHeightSelection), for: .touchUpInside)
       return btn
     }()
     
@@ -88,7 +90,7 @@ class FitnessGoalViewController: UIViewController {
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         btn.setTitleColor(UIColor.black, for: .normal)
         btn.backgroundColor = .white
-        btn.layer.borderColor = UIColor.black.cgColor
+        btn.layer.borderColor = UIColor.label.cgColor
         btn.layer.borderWidth = 1
         btn.layer.cornerRadius = 15
         
@@ -103,7 +105,7 @@ class FitnessGoalViewController: UIViewController {
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         btn.setTitleColor(UIColor.black, for: .normal)
         btn.backgroundColor = .white
-        btn.layer.borderColor = UIColor.black.cgColor
+        btn.layer.borderColor = UIColor.label.cgColor
         btn.layer.borderWidth = 1
         btn.layer.cornerRadius = 10
         
@@ -118,7 +120,7 @@ class FitnessGoalViewController: UIViewController {
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         btn.setTitleColor(UIColor.black, for: .normal)
         btn.backgroundColor = .white
-        btn.layer.borderColor = UIColor.black.cgColor
+        btn.layer.borderColor = UIColor.label.cgColor
         btn.layer.borderWidth = 1
         btn.layer.cornerRadius = 10
         
@@ -128,7 +130,8 @@ class FitnessGoalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        navigationItem.hidesBackButton = true
+        view.backgroundColor = .systemBackground
         view.addSubview(pageLabel)
         view.addSubview(questionLabel)
         view.addSubview(infoLabel)
@@ -225,25 +228,33 @@ class FitnessGoalViewController: UIViewController {
     
     @objc func buttonTapped(_ sender: UIButton) {
         // Deselect all buttons
-//        for button in [btnWeightLoss, btnMuscleGain, btnCardiovascular] {
-//            button.isSelected = false
-//            button.backgroundColor = .white
-//            button.layer.sublayers?.removeAll { $0 is CAGradientLayer }
-//        }
-//        
-//        // Select the tapped button and apply the gradient effect
-//        sender.isSelected = true
-//        sender.setTitleColor(UIColor.white, for: .selected)
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.systemBlue.cgColor]
-//        gradientLayer.locations = [0, 1]
-//        gradientLayer.frame = sender.bounds
-//        gradientLayer.cornerRadius = 10
-//        
-//        sender.layer.insertSublayer(gradientLayer, at: 0)
+        for button in [btnWeightLoss, btnMuscleGain, btnCardiovascular] {
+            button.isSelected = false
+            button.backgroundColor = .white
+            button.layer.sublayers?.removeAll { $0 is CAGradientLayer }
+        }
+
+        // Select the tapped button and apply the gradient effect
+        sender.isSelected = true
+        sender.setTitleColor(UIColor.white, for: .selected)
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.systemBlue.cgColor]
+        gradientLayer.locations = [0, 1]
+        gradientLayer.frame = sender.bounds
+        gradientLayer.cornerRadius = 10
+
+        sender.layer.insertSublayer(gradientLayer, at: 0)
     }
 
+    @objc func gotoHeightSelection(){
+        let controller = HeightSelectionViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
+    @objc func gotoFitLevelSelection(){
+        let controller = FitnessLevelViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 
     /*
     // MARK: - Navigation

@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
     let loginHeader : UILabel = {
         let label = UILabel()
         label.text = "Log In"
-        label.textColor = .black
+        label.textColor = .label
         label.font = UIFont.systemFont(ofSize: 20,weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -26,7 +26,6 @@ class LoginViewController: UIViewController {
         textField.placeholder = "Email Address"
         textField.layer.backgroundColor = UIColor.systemFill.cgColor
         textField.layer.cornerRadius = 3
-        //UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20));
         textField.leftViewMode = .always;
         return textField
@@ -38,7 +37,6 @@ class LoginViewController: UIViewController {
         textField.placeholder = "Password"
         textField.layer.backgroundColor = UIColor.systemFill.cgColor
         textField.layer.cornerRadius = 3
-        //UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20));
         textField.leftViewMode = .always;
         textField.isSecureTextEntry = true
@@ -54,15 +52,16 @@ class LoginViewController: UIViewController {
         button.backgroundColor = .black
         button.layer.cornerRadius = 4
         button.layer.borderWidth = 3
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor.label.cgColor
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
-       // button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(gotoHome), for: .touchUpInside)
+        // button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
     let divider : UIView = {
         let divider = UIView()
-        divider.backgroundColor = UIColor.gray
+        divider.backgroundColor = UIColor.systemGray2
         divider.translatesAutoresizingMaskIntoConstraints = false
         
         return divider
@@ -76,9 +75,9 @@ class LoginViewController: UIViewController {
         button.backgroundColor = .white
         button.layer.cornerRadius = 4
         button.layer.borderWidth = 3
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor.label.cgColor
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
-       // button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(gotoSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -87,19 +86,21 @@ class LoginViewController: UIViewController {
         let label = UILabel()
         label.text = "Forgot Password?"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = .label
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        //label.addTarget(self, action: #selector(gotoForgetPassword), for: .touchUpInside)
         label.textAlignment = .center
+        
         return label
     }()
     
     
- 
+    
     
     let errorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .red
+        label.textColor = .systemRed
         label.textAlignment = .center
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 14)
@@ -109,7 +110,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        
+        giveForgotPasswordLabelAction()
+        
+        navigationItem.hidesBackButton = true
+        
+        view.backgroundColor = .systemBackground
         view.addSubview(loginHeader)
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
@@ -140,7 +146,7 @@ class LoginViewController: UIViewController {
             emailTextField.heightAnchor.constraint(equalToConstant: 45)
         ])
         
-       
+        
         
         NSLayoutConstraint.activate([
             passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 30),
@@ -180,6 +186,12 @@ class LoginViewController: UIViewController {
         
     }
     
+    func giveForgotPasswordLabelAction(){
+        fogotPassword.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(gotoForgetPassword))
+        fogotPassword.addGestureRecognizer(tapGesture)
+    }
+    
     
     
     @objc func loginButtonTapped() {
@@ -198,9 +210,23 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @objc func gotoHome(){
+        let tabNavbar = BottomNavBarController()
+        let nav = UINavigationController(rootViewController: tabNavbar)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: false , completion: nil)
+        
+//        let controller = BottomNavBarController()
+//        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // Dismiss the keyboard when the user taps outside of the text fields
-        view.endEditing(true)
+    @objc func gotoForgetPassword(){
+        let controller = ForgetPasswordViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func gotoSignUp(){
+        let controller = SignInViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

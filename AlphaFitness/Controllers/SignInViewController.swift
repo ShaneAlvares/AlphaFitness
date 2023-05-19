@@ -12,7 +12,7 @@ class SignInViewController: UIViewController {
     let loginHeader : UILabel = {
         let label = UILabel()
         label.text = "SIGN UP"
-        label.textColor = .black
+        label.textColor = .label
         label.font = UIFont.systemFont(ofSize: 20,weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -25,7 +25,6 @@ class SignInViewController: UIViewController {
         textField.placeholder = "Full Name"
         textField.layer.backgroundColor = UIColor.systemFill.cgColor
         textField.layer.cornerRadius = 3
-        //UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20));
         textField.leftViewMode = .always;
         return textField
@@ -92,15 +91,15 @@ class SignInViewController: UIViewController {
         button.backgroundColor = .black
         button.layer.cornerRadius = 4
         button.layer.borderWidth = 3
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor.label.cgColor
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
-       // button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(gotoGenderSelection), for: .touchUpInside)
         return button
     }()
     
     let divider : UIView = {
         let divider = UIView()
-        divider.backgroundColor = UIColor.gray
+        divider.backgroundColor = UIColor.systemGray2
         divider.translatesAutoresizingMaskIntoConstraints = false
         
         return divider
@@ -114,18 +113,18 @@ class SignInViewController: UIViewController {
         button.backgroundColor = .white
         button.layer.cornerRadius = 4
         button.layer.borderWidth = 3
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor.label.cgColor
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
-       // button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(gotoLogin), for: .touchUpInside)
         return button
     }()
     
- 
+    
     
     let errorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .red
+        label.textColor = .systemRed
         label.textAlignment = .center
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 14)
@@ -135,7 +134,8 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        navigationItem.hidesBackButton = true
+        view.backgroundColor = .systemBackground
         view.addSubview(loginHeader)
         view.addSubview(nameTextField)
         view.addSubview(ageTextField)
@@ -218,7 +218,7 @@ class SignInViewController: UIViewController {
             loginButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-       
+        
         
         
         
@@ -242,10 +242,14 @@ class SignInViewController: UIViewController {
         }
     }
     
+    @objc func gotoLogin(){
+        let controller = LoginViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // Dismiss the keyboard when the user taps outside of the text fields
-        view.endEditing(true)
+    @objc func gotoGenderSelection(){
+        let controller = GenderSelectionViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 

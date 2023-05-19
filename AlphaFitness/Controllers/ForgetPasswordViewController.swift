@@ -12,7 +12,7 @@ class ForgetPasswordViewController: UIViewController {
     let loginHeader : UILabel = {
         let label = UILabel()
         label.text = "Forget Password"
-        label.textColor = .black
+        label.textColor = .label
         label.font = UIFont.systemFont(ofSize: 20,weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -40,9 +40,9 @@ class ForgetPasswordViewController: UIViewController {
         button.backgroundColor = .black
         button.layer.cornerRadius = 4
         button.layer.borderWidth = 3
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor.label.cgColor
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-       // button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        // button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -96,9 +96,9 @@ class ForgetPasswordViewController: UIViewController {
         button.backgroundColor = .white
         button.layer.cornerRadius = 4
         button.layer.borderWidth = 3
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor.label.cgColor
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-       // button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        // button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -106,7 +106,7 @@ class ForgetPasswordViewController: UIViewController {
     let errorLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .red
+        label.textColor = .systemRed
         label.textAlignment = .center
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 14)
@@ -116,7 +116,7 @@ class ForgetPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         view.addSubview(loginHeader)
         view.addSubview(emailTextField)
         view.addSubview(btnVerify)
@@ -176,7 +176,7 @@ class ForgetPasswordViewController: UIViewController {
         ])
         
         
-       
+        
         
         NSLayoutConstraint.activate([
             btnUpdatePassword.topAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor, constant: 30),
@@ -185,29 +185,5 @@ class ForgetPasswordViewController: UIViewController {
             btnUpdatePassword.heightAnchor.constraint(equalToConstant: 50),
         ])
         
-    }
-    
-    
-    
-    @objc func loginButtonTapped() {
-        if emailTextField.text == "" || passwordTextField.text == "" {
-            errorLabel.text = "Please enter"
-            errorLabel.isHidden = false
-            return
-        }
-        if emailTextField.text == "example@email.com" && passwordTextField.text == "password" {
-            // Successful login
-            // You can navigate to the next screen here
-        } else {
-            // Invalid email or password
-            errorLabel.text = "Invalid email or password"
-            errorLabel.isHidden = false
-        }
-    }
-    
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // Dismiss the keyboard when the user taps outside of the text fields
-        view.endEditing(true)
     }
 }

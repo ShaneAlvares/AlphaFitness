@@ -1,13 +1,20 @@
+//
+//  DashboardViewController.swift
+//  AlphaFitness
+//
+//  Created by Frank Alvares on 2023-05-19.
+//
+
 import UIKit
 
 import SDWebImage
 
-class TestTempViewController: UIViewController {
+class DashboardViewController: UIViewController {
     
     let scrollView : UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = .white
+        scrollView.backgroundColor = .systemBackground
         
         return scrollView
     }()
@@ -15,7 +22,7 @@ class TestTempViewController: UIViewController {
     let contentView : UIView = {
         let contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .systemBackground
         return contentView
     }()
     
@@ -23,7 +30,7 @@ class TestTempViewController: UIViewController {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.tintColor = .black
+        imageView.tintColor = .label
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "person.circle.fill")
         return imageView
@@ -33,7 +40,7 @@ class TestTempViewController: UIViewController {
         let label = UILabel()
         label.text = "Hi, Shane Alvares"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.black
+        label.textColor = UIColor.label
         label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -44,7 +51,7 @@ class TestTempViewController: UIViewController {
         let label = UILabel()
         label.text = "Its your training time, Go Go!"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.gray
+        label.textColor = UIColor.systemGray
         label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -110,6 +117,8 @@ class TestTempViewController: UIViewController {
         let card = CardView()
         card.translatesAutoresizingMaskIntoConstraints = false
         card.backgroundColor = .black
+        card.layer.borderWidth = 2
+        card.layer.borderColor = UIColor.label.cgColor
         card.layer.cornerRadius = 10
         return card
     }()
@@ -127,7 +136,7 @@ class TestTempViewController: UIViewController {
         let label = UILabel()
         label.text = "Popular Workouts"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.black
+        label.textColor = UIColor.label
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -138,7 +147,7 @@ class TestTempViewController: UIViewController {
         let label = UILabel()
         label.text = "See More"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.gray
+        label.textColor = UIColor.systemGray
         label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -163,24 +172,10 @@ class TestTempViewController: UIViewController {
     }()
     
     
-    let titleLabel : UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.text = "Dashboard"
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
-        titleLabel.textColor = .black
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        return titleLabel
-    }()
-    
-    let titleView : UIView = {
-        let titleView = UIView()
-        return titleView
-    }()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
+        view.backgroundColor = .systemBackground
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
@@ -223,7 +218,7 @@ class TestTempViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            userIcon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
+            userIcon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -30),
             userIcon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             userIcon.heightAnchor.constraint(equalToConstant: 70),
             userIcon.widthAnchor.constraint(equalToConstant: 70)
@@ -268,7 +263,7 @@ class TestTempViewController: UIViewController {
             popularWorkoutsCard.topAnchor.constraint(equalTo: popularWorkoutLabel.bottomAnchor, constant: 20),
             popularWorkoutsCard.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 6),
             popularWorkoutsCard.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -6),
-            popularWorkoutsCard.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            popularWorkoutsCard.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -110),
         ])
         
         
@@ -341,11 +336,11 @@ class TestTempViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         
         let progressViewCompleted = UIView()
-        progressViewCompleted.backgroundColor = .green
+        progressViewCompleted.backgroundColor = .systemGreen
         progressViewCompleted.layer.cornerRadius = 5
         
         let progressViewRemaining = UIView()
-        progressViewRemaining.backgroundColor = .white
+        progressViewRemaining.backgroundColor = .systemGray3
         progressViewRemaining.layer.cornerRadius = 5
         
         let labelContainer = UIView()
@@ -404,7 +399,7 @@ class TestTempViewController: UIViewController {
         excersieName.text = text
         excersieName.textAlignment = .center
         excersieName.backgroundColor = .clear
-        excersieName.textColor = .black
+        excersieName.textColor = .label
         excersieName.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         excersieName.translatesAutoresizingMaskIntoConstraints = false
         
@@ -412,7 +407,7 @@ class TestTempViewController: UIViewController {
         excersieCategory.text = "Body Weight"
         excersieCategory.textAlignment = .center
         excersieCategory.backgroundColor = .clear
-        excersieCategory.textColor = .gray
+        excersieCategory.textColor = .systemGray
         excersieCategory.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         excersieCategory.translatesAutoresizingMaskIntoConstraints = false
         
@@ -420,7 +415,7 @@ class TestTempViewController: UIViewController {
         excersieTimePeriod.text = "5mins - Intermediate"
         excersieTimePeriod.textAlignment = .center
         excersieTimePeriod.backgroundColor = .clear
-        excersieTimePeriod.textColor = .gray
+        excersieTimePeriod.textColor = .systemGray
         excersieTimePeriod.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         excersieTimePeriod.translatesAutoresizingMaskIntoConstraints = false
         
@@ -439,7 +434,7 @@ class TestTempViewController: UIViewController {
         let viewMoreBtn = UIImageView()
         viewMoreBtn.contentMode = .scaleAspectFit
         viewMoreBtn.clipsToBounds = true
-        viewMoreBtn.tintColor = .gray
+        viewMoreBtn.tintColor = .systemGray
         viewMoreBtn.translatesAutoresizingMaskIntoConstraints = false
         viewMoreBtn.image = UIImage(systemName: "arrow.forward.circle")
         
@@ -479,8 +474,5 @@ class TestTempViewController: UIViewController {
         
         return labelContainer
     }
-    
-    
-    
-}
 
+}

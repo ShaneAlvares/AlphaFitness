@@ -16,20 +16,20 @@ class GetStartedController: UIViewController, AVPlayerViewControllerDelegate {
     var looper: AVPlayerLooper!
     
     let headerLable : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Start Your Journey\nToday with\nAlpha Fitness"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.white
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 30.0, weight: .heavy)
         label.numberOfLines = 0
         return label
     }()
     
     let smallLable : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Set the goals you’re striving towards,\nbe it losing fat, getting a muscular body,\nor improving your endurance."
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.white
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 18.0, weight: .semibold)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -42,14 +42,15 @@ class GetStartedController: UIViewController, AVPlayerViewControllerDelegate {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("GET STARTED", for: .normal)
-        btn.setTitleShadowColor(UIColor.black, for: .normal)
+        btn.setTitleShadowColor(UIColor.label, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 20.0, weight: .heavy)
-        btn.setTitleColor(.black, for: .normal)
-        btn.backgroundColor = .white
+        btn.setTitleColor(UIColor.black, for: .normal)
+        btn.backgroundColor = UIColor.white
         btn.layer.cornerRadius = 10
-        btn.layer.borderColor = UIColor.black.cgColor
+        btn.layer.borderColor = UIColor.label.cgColor
         btn.layer.borderWidth = 1
         btn.isHidden = true
+        btn.addTarget(self, action: #selector(goToLogin), for: .touchUpInside)
         return btn
     }()
     
@@ -112,6 +113,7 @@ class GetStartedController: UIViewController, AVPlayerViewControllerDelegate {
         player.play()
         
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -119,26 +121,13 @@ class GetStartedController: UIViewController, AVPlayerViewControllerDelegate {
         if(playerLayer != nil){
             playerLayer.frame = view.bounds
         }
-            
+        
     }
-//    
-//    @IBAction func presentVideoPlayer(_ sender: UIButton) {
-//        // Create the player view controller
-//        let playerViewController = AVPlayerViewController()
-//        playerViewController.player = player
-//        playerViewController.delegate = self
-//        
-//        // Present the player view controller full screen
-//        playerViewController.modalPresentationStyle = .fullScreen
-//        present(playerViewController, animated: true) {
-//            self.player.play()
-//        }
-//    }
-//    
-//    // AVPlayerViewControllerDelegate method called when the video finishes playing
-//    func playerViewControllerDidEndDismissalTransition(_ playerViewController: AVPlayerViewController) {
-//        player.seek(to: .zero)
-//    }
+    
+    @objc private func goToLogin(){
+        let controller = LoginViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
     
     

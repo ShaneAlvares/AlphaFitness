@@ -8,12 +8,12 @@
 import UIKit
 
 class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
+    
     let pageLabel : UILabel = {
-       let label = UILabel()
-        label.text = "4 of 5"
+        let label = UILabel()
+        label.text = "5 of 5"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.gray
+        label.textColor = UIColor.systemGray2
         label.font = UIFont.systemFont(ofSize: 15.0, weight: .semibold)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -23,10 +23,10 @@ class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, U
     
     
     let questionLabel : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "What is your weight?"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.black
+        label.textColor = UIColor.label
         label.font = UIFont.systemFont(ofSize: 20.0, weight: .medium)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -34,10 +34,10 @@ class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, U
     }()
     
     let infoLabel : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Weight management as it provides users with a convenient tool to track their progress, set goals, and monitor their fitness activities, leading to greater accountability and motivation."
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.gray
+        label.textColor = UIColor.systemGray3
         label.font = UIFont.systemFont(ofSize: 17.0, weight: .medium)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -47,7 +47,7 @@ class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, U
     
     let dividerView : UIView = {
         let divider = UIView()
-        divider.backgroundColor = UIColor.gray
+        divider.backgroundColor = UIColor.systemGray2
         divider.translatesAutoresizingMaskIntoConstraints = false
         
         return divider
@@ -55,7 +55,7 @@ class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, U
     
     let dividerVerticalView : UIView = {
         let divider = UIView()
-        divider.backgroundColor = UIColor.gray
+        divider.backgroundColor = UIColor.systemGray2
         divider.translatesAutoresizingMaskIntoConstraints = false
         
         return divider
@@ -69,7 +69,8 @@ class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, U
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setImage(backArr, for: .normal)
-        btn.tintColor = .gray
+        btn.tintColor = .systemGray2
+        btn.addTarget(self, action: #selector(gotoHeightSelection), for: .touchUpInside)
         return btn
     }()
     
@@ -80,7 +81,8 @@ class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, U
         btn.setTitleShadowColor(UIColor.systemBlue, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
         btn.setTitleColor(.systemBlue, for: .normal)
-      return btn
+        btn.addTarget(self, action: #selector(gotoDashboard), for: .touchUpInside)
+        return btn
     }()
     
     var cameraModePicker: UIPickerView!
@@ -88,10 +90,10 @@ class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, U
     var rotationAngle: CGFloat! = -90 * (.pi/180)
     
     let measureType : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Kg"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.black
+        label.textColor = UIColor.label
         label.font = UIFont.systemFont(ofSize: 18.0, weight: .bold)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -102,7 +104,7 @@ class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, U
         
         let screenHeight = UIScreen.main.bounds.height
         let pickerHeight: CGFloat = 120
-
+        
         let y = (screenHeight - pickerHeight) / 2
         
         cameraModePicker = UIPickerView()
@@ -117,15 +119,15 @@ class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .white
+        navigationItem.hidesBackButton = true
+        view.backgroundColor = .systemBackground
         view.addSubview(pageLabel)
         view.addSubview(questionLabel)
         view.addSubview(infoLabel)
         
-//        view.addSubview(btnWeightLoss)
-//        view.addSubview(btnMuscleGain)
-//        view.addSubview(btnCardiovascular)
+        //        view.addSubview(btnWeightLoss)
+        //        view.addSubview(btnMuscleGain)
+        //        view.addSubview(btnCardiovascular)
         
         view.addSubview(measureType)
         
@@ -138,7 +140,7 @@ class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, U
         addContraints()
         
         setupPickerView()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -217,7 +219,7 @@ class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, U
         let modeView = UIView()
         modeView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         let modeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        modeLabel.textColor = .black
+        modeLabel.textColor = .label
         modeLabel.text = String(captureModesList[row])
         modeLabel.textAlignment = .center
         modeLabel.font = UIFont.systemFont(ofSize: 15.0, weight: .bold)
@@ -230,15 +232,24 @@ class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, U
         return 100
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func gotoDashboard(){
+        let controller = DashboardViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
-    */
-
+    
+    @objc func gotoHeightSelection(){
+        let controller = HeightSelectionViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
