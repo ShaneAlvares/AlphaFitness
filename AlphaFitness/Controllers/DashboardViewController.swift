@@ -201,7 +201,7 @@ class DashboardViewController: UIViewController {
     }
     
     func addConstraints(){
-
+        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -218,7 +218,7 @@ class DashboardViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            userIcon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -30),
+            userIcon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -10),
             userIcon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             userIcon.heightAnchor.constraint(equalToConstant: 70),
             userIcon.widthAnchor.constraint(equalToConstant: 70)
@@ -474,5 +474,5 @@ class DashboardViewController: UIViewController {
         
         return labelContainer
     }
-
+    
 }

@@ -19,6 +19,11 @@
 		5046CB1229C0D69A0052ABF4 /* ApiManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB1129C0D69A0052ABF4 /* ApiManger.swift */; };
 		5046CB1729C0DADD0052ABF4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB1629C0DADD0052ABF4 /* LoginViewController.swift */; };
 		5056E5AC2A1801A700B89385 /* AllExcersisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5AB2A1801A700B89385 /* AllExcersisesViewController.swift */; };
+		5056E5B02A187F7900B89385 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5AF2A187F7900B89385 /* ScheduleViewController.swift */; };
+		5056E5B22A18EA1F00B89385 /* PopCreateScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5B12A18EA1F00B89385 /* PopCreateScheduleViewController.swift */; };
+		5056E5B42A18EBC900B89385 /* DetailScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5B32A18EBC900B89385 /* DetailScheduleViewController.swift */; };
+		5056E5B62A18F49600B89385 /* PopAddScheduleExcersiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5B52A18F49600B89385 /* PopAddScheduleExcersiseViewController.swift */; };
+		5056E5B82A192F1900B89385 /* SingleExcerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5B72A192F1900B89385 /* SingleExcerciseViewController.swift */; };
 		505B89FE2A15192300F324FA /* FitnessGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B89FD2A15192300F324FA /* FitnessGoalViewController.swift */; };
 		505B8A022A151D4800F324FA /* HeightSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A012A151D4800F324FA /* HeightSelectionViewController.swift */; };
 		505B8A062A151EB900F324FA /* TestTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505B8A052A151EB900F324FA /* TestTempViewController.swift */; };
@@ -51,6 +56,11 @@
 		5046CB1129C0D69A0052ABF4 /* ApiManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManger.swift; sourceTree = "<group>"; };
 		5046CB1629C0DADD0052ABF4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5056E5AB2A1801A700B89385 /* AllExcersisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllExcersisesViewController.swift; sourceTree = "<group>"; };
+		5056E5AF2A187F7900B89385 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		5056E5B12A18EA1F00B89385 /* PopCreateScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopCreateScheduleViewController.swift; sourceTree = "<group>"; };
+		5056E5B32A18EBC900B89385 /* DetailScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScheduleViewController.swift; sourceTree = "<group>"; };
+		5056E5B52A18F49600B89385 /* PopAddScheduleExcersiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAddScheduleExcersiseViewController.swift; sourceTree = "<group>"; };
+		5056E5B72A192F1900B89385 /* SingleExcerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleExcerciseViewController.swift; sourceTree = "<group>"; };
 		505B89FD2A15192300F324FA /* FitnessGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessGoalViewController.swift; sourceTree = "<group>"; };
 		505B8A012A151D4800F324FA /* HeightSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightSelectionViewController.swift; sourceTree = "<group>"; };
 		505B8A052A151EB900F324FA /* TestTempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTempViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +177,11 @@
 				500DD02C2A178FDC001C84EA /* BottomNavBarController.swift */,
 				500DD0302A17B96E001C84EA /* DashboardViewController.swift */,
 				5056E5AB2A1801A700B89385 /* AllExcersisesViewController.swift */,
+				5056E5AF2A187F7900B89385 /* ScheduleViewController.swift */,
+				5056E5B12A18EA1F00B89385 /* PopCreateScheduleViewController.swift */,
+				5056E5B32A18EBC900B89385 /* DetailScheduleViewController.swift */,
+				5056E5B52A18F49600B89385 /* PopAddScheduleExcersiseViewController.swift */,
+				5056E5B72A192F1900B89385 /* SingleExcerciseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -308,14 +323,18 @@
 				505B8A022A151D4800F324FA /* HeightSelectionViewController.swift in Sources */,
 				50B586E729C6013F00597B50 /* GetStartedController.swift in Sources */,
 				505B8A112A156D3A00F324FA /* ForgetPasswordViewController.swift in Sources */,
+				5056E5B42A18EBC900B89385 /* DetailScheduleViewController.swift in Sources */,
 				5046CB1729C0DADD0052ABF4 /* LoginViewController.swift in Sources */,
+				5056E5B82A192F1900B89385 /* SingleExcerciseViewController.swift in Sources */,
 				505B8A0B2A1557B500F324FA /* GenderSelectionViewController.swift in Sources */,
 				500DD0312A17B96E001C84EA /* DashboardViewController.swift in Sources */,
 				5046CB0F29C0D6180052ABF4 /* User.swift in Sources */,
 				505B8A0F2A1569C700F324FA /* SignInViewController.swift in Sources */,
+				5056E5B02A187F7900B89385 /* ScheduleViewController.swift in Sources */,
 				505FCB592A129F2800E7673E /* FitnessLevelViewController.swift in Sources */,
 				50057CC429BCC01A00919FD3 /* AppDelegate.swift in Sources */,
 				505B8A082A15545D00F324FA /* WeightSelectionViewController.swift in Sources */,
+				5056E5B22A18EA1F00B89385 /* PopCreateScheduleViewController.swift in Sources */,
 				5046CB1229C0D69A0052ABF4 /* ApiManger.swift in Sources */,
 				505B8A152A16A72400F324FA /* CardView.swift in Sources */,
 				505B8A062A151EB900F324FA /* TestTempViewController.swift in Sources */,
@@ -323,6 +342,7 @@
 				50057CC629BCC01A00919FD3 /* SceneDelegate.swift in Sources */,
 				500DD02D2A178FDC001C84EA /* BottomNavBarController.swift in Sources */,
 				505B89FE2A15192300F324FA /* FitnessGoalViewController.swift in Sources */,
+				5056E5B62A18F49600B89385 /* PopAddScheduleExcersiseViewController.swift in Sources */,
 				5056E5AC2A1801A700B89385 /* AllExcersisesViewController.swift in Sources */,
 				50B586F829C735AB00597B50 /* SplashViewController.swift in Sources */,
 			);

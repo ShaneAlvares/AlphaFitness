@@ -13,8 +13,8 @@ class BottomNavBarController: UITabBarController {
         super.viewDidLoad()
         // Create your view controllers for each tab
         let firstViewController = UINavigationController(rootViewController: DashboardViewController())
-        let secondViewController = UIViewController()
-        let thirdViewController = UIViewController()
+        let secondViewController = UINavigationController(rootViewController: AllExcersisesViewController())
+        let thirdViewController = UINavigationController(rootViewController: ScheduleViewController())
         let fourthViewController = UIViewController()
         
         // Set the view controllers for the tab bar controller

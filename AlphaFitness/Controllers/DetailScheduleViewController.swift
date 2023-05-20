@@ -1,5 +1,5 @@
 //
-//  AllExcersisesViewController.swift
+//  DetailScheduleViewController.swift
 //  AlphaFitness
 //
 //  Created by Frank Alvares on 2023-05-20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AllExcersisesViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
+class DetailScheduleViewController: UIViewController {
     
     let scrollView : UIScrollView = {
         let scrollView = UIScrollView()
@@ -24,10 +24,9 @@ class AllExcersisesViewController: UIViewController, UIPickerViewDelegate, UIPic
         return contentView
     }()
     
-    
     let pgName : UILabel = {
         let label = UILabel()
-        label.text = "Search Excersises"
+        label.text = "Mon - LEGS"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.label
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
@@ -36,20 +35,9 @@ class AllExcersisesViewController: UIViewController, UIPickerViewDelegate, UIPic
         return label
     }()
     
-    let searchText : UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Seach for excersise"
-        textField.layer.backgroundColor = UIColor.systemFill.cgColor
-        textField.layer.cornerRadius = 5
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20));
-        textField.leftViewMode = .always;
-        return textField
-    }()
-    
-    let searchButton : UIButton = {
+    let addButton : UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.backgroundColor =  .black
         button.translatesAutoresizingMaskIntoConstraints = false
         //button.setTitleColor(.white, for: .normal)
@@ -57,42 +45,22 @@ class AllExcersisesViewController: UIViewController, UIPickerViewDelegate, UIPic
         button.layer.cornerRadius = 6
         button.layer.borderColor = UIColor.label.cgColor
         button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(openPopup), for: .touchUpInside)
         return button
     }()
     
-    
-    let resultsLabel: UILabel = {
+    let infoLabel : UILabel = {
         let label = UILabel()
-        label.text = "Results: "
+        label.text = "Here you can able to add excercises for your schedule."
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.label
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.textColor = UIColor.systemGray
+        label.font = UIFont.systemFont(ofSize: 17.0, weight: .medium)
         label.numberOfLines = 0
         label.sizeToFit()
+        //label.textAlignment = .justified
         return label
     }()
     
-    let data = ["Option 1", "Option 2", "Option 3","Option 1", "Option 2", "Option 3"]
-    
-    let dropdownButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Select a category", for: .normal)
-        button.setTitleColor(.systemGray2, for: .normal)
-        button.backgroundColor = .clear
-        button.addTarget(self, action: #selector(dropdownButtonTapped), for: .touchUpInside)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        button.contentHorizontalAlignment = .right
-        return button
-    }()
-    
-    let pickerView: UIPickerView = {
-        let pickerView = UIPickerView()
-        pickerView.backgroundColor = .white
-        pickerView.layer.cornerRadius = 10
-        pickerView.layer.borderColor = UIColor.systemGray2.cgColor
-        pickerView.layer.borderWidth = 1
-        return pickerView
-    }()
     
     let productStack : UIStackView = {
         let stack = UIStackView()
@@ -114,17 +82,17 @@ class AllExcersisesViewController: UIViewController, UIPickerViewDelegate, UIPic
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
+        
         view.backgroundColor = .systemBackground
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
         contentView.addSubview(pgName)
-        contentView.addSubview(searchText)
-        contentView.addSubview(searchButton)
-        contentView.addSubview(resultsLabel)
+        contentView.addSubview(addButton)
+        contentView.addSubview(infoLabel)
         
-        setUpPicker()
+        
         addProductToStack()
         contentView.addSubview(popularWorkoutsCard)
         
@@ -153,59 +121,31 @@ class AllExcersisesViewController: UIViewController, UIPickerViewDelegate, UIPic
             pgName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -10),
             pgName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 6),
         ])
+        
         NSLayoutConstraint.activate([
-            searchText.topAnchor.constraint(equalTo: pgName.bottomAnchor, constant: 10),
-            searchText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
-            searchText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -100),
-            searchText.heightAnchor.constraint(equalToConstant: 45)
+            addButton.centerYAnchor.constraint(equalTo: pgName.centerYAnchor),
+            addButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -6),
+            addButton.widthAnchor.constraint(equalToConstant: 35),
+            addButton.heightAnchor.constraint(equalToConstant: 35)
         ])
         
         NSLayoutConstraint.activate([
-            searchButton.topAnchor.constraint(equalTo: searchText.topAnchor),
-            searchButton.leadingAnchor.constraint(equalTo: searchText.trailingAnchor, constant: 10),
-            searchButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
-            searchButton.heightAnchor.constraint(equalTo: searchText.heightAnchor)
+            infoLabel.topAnchor.constraint(equalTo: pgName.bottomAnchor, constant: 20),
+            infoLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 6),
+            infoLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -6),
         ])
         
         NSLayoutConstraint.activate([
-            resultsLabel.topAnchor.constraint(equalTo: searchText.bottomAnchor, constant: 20),
-            resultsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 6),
-        ])
-        
-        NSLayoutConstraint.activate([
-            dropdownButton.topAnchor.constraint(equalTo: resultsLabel.topAnchor),
-            dropdownButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6),
-            dropdownButton.widthAnchor.constraint(equalToConstant: 150),
-            dropdownButton.heightAnchor.constraint(equalToConstant: 30),
-        ])
-        
-        NSLayoutConstraint.activate([
-            pickerView.topAnchor.constraint(equalTo: dropdownButton.bottomAnchor, constant: 5),
-            pickerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6),
-            pickerView.heightAnchor.constraint(equalToConstant: 150),
-        ])
-        
-        NSLayoutConstraint.activate([
-            popularWorkoutsCard.topAnchor.constraint(equalTo: resultsLabel.bottomAnchor, constant: 20),
+            popularWorkoutsCard.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 20),
             popularWorkoutsCard.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 6),
             popularWorkoutsCard.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -6),
             popularWorkoutsCard.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
-        
     }
     
-    func setUpPicker(){
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        pickerView.isHidden = true
-        view.addSubview(pickerView)
-        view.addSubview(dropdownButton)
-        pickerView.translatesAutoresizingMaskIntoConstraints = false
-        dropdownButton.translatesAutoresizingMaskIntoConstraints = false
-    }
     
     func addProductToStack(){
-        for i in ["Excersie 01", "Excersie 02", "Excersie 03", "Excersie 04", "Excersie 05", "Excersie 06"] {
+        for i in ["Excersice 01", "Excersice 02", "Excersice 03", "Excersice 04","Excersice 01", "Excersice 02", "Excersice 03", "Excersice 04"] {
             let exerciseLayout = createExceriseLayout(with: (i))
             productStack.addArrangedSubview(exerciseLayout)
         }
@@ -301,40 +241,12 @@ class AllExcersisesViewController: UIViewController, UIPickerViewDelegate, UIPic
         return labelContainer
     }
     
-    
-    @objc func dropdownButtonTapped() {
-        pickerView.isHidden = !pickerView.isHidden
+    @objc func openPopup(){
+        let popupVC = PopAddScheduleExcersiseViewController()
+        popupVC.modalPresentationStyle = .overFullScreen
+        present(popupVC, animated: false, completion: nil)
     }
     
-    // MARK: - UIPickerViewDelegate and UIPickerViewDataSource methods
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1 // We only have one component in this example
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return data.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return data[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        dropdownButton.setTitle(data[row], for: .normal)
-        pickerView.isHidden = true
-    }
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let option = data[row]
-        let color = UIColor.black // Replace with your desired font color
-        
-        let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: color,
-            .font: UIFont.systemFont(ofSize: 14) // Replace with your desired font size
-        ]
-        
-        return NSAttributedString(string: option, attributes: attributes)
-    }
     
     /*
      // MARK: - Navigation
