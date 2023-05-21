@@ -66,6 +66,7 @@
 		504C200C2A1A212700B369FD /* TestingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingProfileViewController.swift; sourceTree = "<group>"; };
 		504C200E2A1A31BE00B369FD /* WorkoutHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHistoryViewController.swift; sourceTree = "<group>"; };
 		504C20102A1A449600B369FD /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		504C20122A1A686300B369FD /* jumpingBox.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jumpingBox.mp4; sourceTree = "<group>"; };
 		5056E5AB2A1801A700B89385 /* AllExcersisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllExcersisesViewController.swift; sourceTree = "<group>"; };
 		5056E5AF2A187F7900B89385 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		5056E5B12A18EA1F00B89385 /* PopCreateScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopCreateScheduleViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +208,7 @@
 		5056E5BF2A19B48C00B89385 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				504C20122A1A686300B369FD /* jumpingBox.mp4 */,
 				5056E5C02A19B49D00B89385 /* pushupsvid.mp4 */,
 			);
 			path = Images;
