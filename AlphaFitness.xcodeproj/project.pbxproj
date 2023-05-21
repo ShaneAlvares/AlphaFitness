@@ -16,13 +16,15 @@
 		500DD02D2A178FDC001C84EA /* BottomNavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DD02C2A178FDC001C84EA /* BottomNavBarController.swift */; };
 		500DD0312A17B96E001C84EA /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DD0302A17B96E001C84EA /* DashboardViewController.swift */; };
 		5046CB0F29C0D6180052ABF4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB0E29C0D6180052ABF4 /* User.swift */; };
-		5046CB1229C0D69A0052ABF4 /* ApiManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB1129C0D69A0052ABF4 /* ApiManger.swift */; };
 		5046CB1729C0DADD0052ABF4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046CB1629C0DADD0052ABF4 /* LoginViewController.swift */; };
 		504C20092A19CA0300B369FD /* PopStartExcersiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C20082A19CA0300B369FD /* PopStartExcersiseViewController.swift */; };
 		504C200B2A19DFEB00B369FD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C200A2A19DFEB00B369FD /* ProfileViewController.swift */; };
 		504C200D2A1A212700B369FD /* TestingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C200C2A1A212700B369FD /* TestingProfileViewController.swift */; };
 		504C200F2A1A31BE00B369FD /* WorkoutHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C200E2A1A31BE00B369FD /* WorkoutHistoryViewController.swift */; };
 		504C20112A1A449600B369FD /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C20102A1A449600B369FD /* MyProfileViewController.swift */; };
+		504C20142A1A73D300B369FD /* LocalStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C20132A1A73D300B369FD /* LocalStorageViewController.swift */; };
+		504C20162A1A806C00B369FD /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C20152A1A806C00B369FD /* AuthManager.swift */; };
+		504C20182A1A882D00B369FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 504C20172A1A882D00B369FD /* GoogleService-Info.plist */; };
 		5056E5AC2A1801A700B89385 /* AllExcersisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5AB2A1801A700B89385 /* AllExcersisesViewController.swift */; };
 		5056E5B02A187F7900B89385 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5AF2A187F7900B89385 /* ScheduleViewController.swift */; };
 		5056E5B22A18EA1F00B89385 /* PopCreateScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5056E5B12A18EA1F00B89385 /* PopCreateScheduleViewController.swift */; };
@@ -59,7 +61,6 @@
 		500DD02C2A178FDC001C84EA /* BottomNavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavBarController.swift; sourceTree = "<group>"; };
 		500DD0302A17B96E001C84EA /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		5046CB0E29C0D6180052ABF4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		5046CB1129C0D69A0052ABF4 /* ApiManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManger.swift; sourceTree = "<group>"; };
 		5046CB1629C0DADD0052ABF4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		504C20082A19CA0300B369FD /* PopStartExcersiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopStartExcersiseViewController.swift; sourceTree = "<group>"; };
 		504C200A2A19DFEB00B369FD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +68,9 @@
 		504C200E2A1A31BE00B369FD /* WorkoutHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHistoryViewController.swift; sourceTree = "<group>"; };
 		504C20102A1A449600B369FD /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		504C20122A1A686300B369FD /* jumpingBox.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jumpingBox.mp4; sourceTree = "<group>"; };
+		504C20132A1A73D300B369FD /* LocalStorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageViewController.swift; sourceTree = "<group>"; };
+		504C20152A1A806C00B369FD /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		504C20172A1A882D00B369FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5056E5AB2A1801A700B89385 /* AllExcersisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllExcersisesViewController.swift; sourceTree = "<group>"; };
 		5056E5AF2A187F7900B89385 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		5056E5B12A18EA1F00B89385 /* PopCreateScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopCreateScheduleViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +132,7 @@
 			children = (
 				5056E5BF2A19B48C00B89385 /* Images */,
 				5046CB1329C0DA900052ABF4 /* Controllers */,
-				5046CB1029C0D67F0052ABF4 /* Helpers */,
+				5046CB1029C0D67F0052ABF4 /* Managers */,
 				5046CB0929C0D53C0052ABF4 /* Storyboards */,
 				5046CB0829C0D5290052ABF4 /* Views */,
 				5046CB0729C0D51A0052ABF4 /* Models */,
@@ -136,6 +140,7 @@
 				50057CC529BCC01A00919FD3 /* SceneDelegate.swift */,
 				50057CC929BCC01A00919FD3 /* Main.storyboard */,
 				50057CCC29BCC01B00919FD3 /* Assets.xcassets */,
+				504C20172A1A882D00B369FD /* GoogleService-Info.plist */,
 				50057CCE29BCC01B00919FD3 /* LaunchScreen.storyboard */,
 				50057CD129BCC01B00919FD3 /* Info.plist */,
 			);
@@ -166,12 +171,12 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		5046CB1029C0D67F0052ABF4 /* Helpers */ = {
+		5046CB1029C0D67F0052ABF4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				5046CB1129C0D69A0052ABF4 /* ApiManger.swift */,
+				504C20152A1A806C00B369FD /* AuthManager.swift */,
 			);
-			path = Helpers;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		5046CB1329C0DA900052ABF4 /* Controllers */ = {
@@ -201,6 +206,7 @@
 				504C200C2A1A212700B369FD /* TestingProfileViewController.swift */,
 				504C200E2A1A31BE00B369FD /* WorkoutHistoryViewController.swift */,
 				504C20102A1A449600B369FD /* MyProfileViewController.swift */,
+				504C20132A1A73D300B369FD /* LocalStorageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -297,6 +303,7 @@
 				50057CCD29BCC01B00919FD3 /* Assets.xcassets in Resources */,
 				5056E5C12A19B49D00B89385 /* pushupsvid.mp4 in Resources */,
 				50057CCB29BCC01A00919FD3 /* Main.storyboard in Resources */,
+				504C20182A1A882D00B369FD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,17 +369,18 @@
 				500DD0312A17B96E001C84EA /* DashboardViewController.swift in Sources */,
 				5046CB0F29C0D6180052ABF4 /* User.swift in Sources */,
 				504C20092A19CA0300B369FD /* PopStartExcersiseViewController.swift in Sources */,
+				504C20142A1A73D300B369FD /* LocalStorageViewController.swift in Sources */,
 				505B8A0F2A1569C700F324FA /* SignInViewController.swift in Sources */,
 				5056E5B02A187F7900B89385 /* ScheduleViewController.swift in Sources */,
 				505FCB592A129F2800E7673E /* FitnessLevelViewController.swift in Sources */,
 				50057CC429BCC01A00919FD3 /* AppDelegate.swift in Sources */,
 				505B8A082A15545D00F324FA /* WeightSelectionViewController.swift in Sources */,
 				5056E5B22A18EA1F00B89385 /* PopCreateScheduleViewController.swift in Sources */,
-				5046CB1229C0D69A0052ABF4 /* ApiManger.swift in Sources */,
 				505B8A152A16A72400F324FA /* CardView.swift in Sources */,
 				505B8A062A151EB900F324FA /* TestTempViewController.swift in Sources */,
 				500973D12A1736C200801224 /* CircularProgress.swift in Sources */,
 				504C200F2A1A31BE00B369FD /* WorkoutHistoryViewController.swift in Sources */,
+				504C20162A1A806C00B369FD /* AuthManager.swift in Sources */,
 				50057CC629BCC01A00919FD3 /* SceneDelegate.swift in Sources */,
 				500DD02D2A178FDC001C84EA /* BottomNavBarController.swift in Sources */,
 				505B89FE2A15192300F324FA /* FitnessGoalViewController.swift in Sources */,

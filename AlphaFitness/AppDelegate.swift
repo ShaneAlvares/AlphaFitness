@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: GetStartedController())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        FirebaseApp.configure()
         return true
     }
     

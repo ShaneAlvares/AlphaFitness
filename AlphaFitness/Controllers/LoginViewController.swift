@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+
 
 class LoginViewController: UIViewController {
     
@@ -54,7 +57,7 @@ class LoginViewController: UIViewController {
         button.layer.borderWidth = 3
         button.layer.borderColor = UIColor.label.cgColor
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
-        button.addTarget(self, action: #selector(gotoHome), for: .touchUpInside)
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         // button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -195,19 +198,42 @@ class LoginViewController: UIViewController {
     
     
     @objc func loginButtonTapped() {
-        if emailTextField.text == "" || passwordTextField.text == "" {
-            errorLabel.text = "Please enter"
-            errorLabel.isHidden = false
-            return
-        }
-        if emailTextField.text == "example@email.com" && passwordTextField.text == "password" {
-            // Successful login
-            // You can navigate to the next screen here
-        } else {
-            // Invalid email or password
-            errorLabel.text = "Invalid email or password"
-            errorLabel.isHidden = false
-        }
+//        if emailTextField.text == "" || passwordTextField.text == "" {
+//            errorLabel.text = "Please enter"
+//            errorLabel.isHidden = false
+//            return
+//        }
+//        if emailTextField.text == "example@email.com" && passwordTextField.text == "password" {
+//            // Successful login
+//            // You can navigate to the next screen here
+//        } else {
+//            // Invalid email or password
+//            errorLabel.text = "Invalid email or password"
+//            errorLabel.isHidden = false
+//        }
+//        New Code
+//        guard let email = emailTextField.text,
+//              let password = passwordTextField.text else {
+//            return
+//        }
+//
+//        let user = User(email: email, password: password)
+//
+//        AuthManager.shared.login(with: user) { [weak self] success in
+//            DispatchQueue.main.async {
+//                if success {
+//                    print("Logged")
+//                    self?.performSegue(withIdentifier: "LoginSuccessSegue", sender: nil)
+//                } else {
+//                    print("Error")
+//                    // Show an error message or handle login failure
+//                }
+//            }
+//        }
+        //working function
+//        let authManager = AuthManager.shared
+//        authManager.findUser()
+        gotoHome()
     }
     
     @objc func gotoHome(){
@@ -228,5 +254,12 @@ class LoginViewController: UIViewController {
     @objc func gotoSignUp(){
         let controller = SignInViewController()
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+}
+class ConnectionManager {
+    static let shared = ConnectionManager()
+    
+    func isFirebaseConnected() -> Bool {
+        return FirebaseApp.app() != nil
     }
 }

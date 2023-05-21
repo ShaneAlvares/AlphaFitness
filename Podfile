@@ -8,5 +8,7 @@ target 'AlphaFitness' do
   # Pods for AlphaFitness
   
   pod 'SDWebImage'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
 end
