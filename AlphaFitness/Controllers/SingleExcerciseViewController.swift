@@ -241,7 +241,7 @@ class SingleExcerciseViewController: UIViewController{
             //getStartedButton.widthAnchor.constraint(equalToConstant: 300),
             getStartedButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             getStartedButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            getStartedButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -80),
+            getStartedButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -40),
             getStartedButton.heightAnchor.constraint(equalToConstant: 60)
         ])
         
