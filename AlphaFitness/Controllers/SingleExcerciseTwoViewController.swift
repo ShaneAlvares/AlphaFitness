@@ -1,40 +1,25 @@
 //
-//  SingleExcerciseViewController.swift
+//  SingleExcerciseTwoViewController.swift
 //  AlphaFitness
 //
-//  Created by Frank Alvares on 2023-05-20.
+//  Created by Frank Alvares on 2023-05-21.
 //
 
 import UIKit
 import AVFoundation
 import AVKit
 
-class SingleExcerciseViewController: UIViewController{
+class SingleExcerciseTwoViewController: UIViewController, AVPlayerViewControllerDelegate {
     
     var player: AVQueuePlayer!
     var playerLayer: AVPlayerLayer!
     var looper: AVPlayerLooper!
     
-    let scrollView : UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = .systemBackground
-        
-        return scrollView
-    }()
-    
-    let contentView : UIView = {
-        let contentView = UIView()
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.backgroundColor = .systemBackground
-        return contentView
-    }()
-    
     let headerLable : UILabel = {
         let label = UILabel()
         label.text = "Push Ups"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .label
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 30.0, weight: .heavy)
         label.numberOfLines = 0
         return label
@@ -44,7 +29,7 @@ class SingleExcerciseViewController: UIViewController{
         let label = UILabel()
         label.text = "Push-ups are a form of exercise that target the muscles in the upper body, particularly the chest, shoulders, and arms. They involve lowering and raising the body by using the arms while maintaining a straight back. Playing push-up videos may serve as a visual guide or motivation for individuals who want to learn or perform push-ups correctly."
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .systemGray
+        label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 16.0, weight: .regular)
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -80,31 +65,22 @@ class SingleExcerciseViewController: UIViewController{
         btn.layer.cornerRadius = 10
         btn.layer.borderColor = UIColor.label.cgColor
         btn.layer.borderWidth = 1
-        btn.addTarget(self, action: #selector(openPopup), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(goToLogin), for: .touchUpInside)
         return btn
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        view.backgroundColor = .systemBackground
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
-        contentView.addSubview(headerLable)
-        contentView.addSubview(getStartedButton)
-        contentView.addSubview(smallLable)
-        addStackForCard()
-        contentView.addSubview(cardView)
-        
-        //        view.addSubview(headerLable)
-        //        view.addSubview(getStartedButton)
-        //        view.addSubview(smallLable)
-        //        addStackForCard()
-        //        view.addSubview(cardView)
+        view.backgroundColor = .label
+        view.addSubview(headerLable)
+        view.addSubview(getStartedButton)
+        view.addSubview(smallLable)
         viewPlayer()
         
-        
-        
+        addStackForCard()
+        view.addSubview(cardView)
+    
         addContraints()
     }
     
@@ -132,17 +108,18 @@ class SingleExcerciseViewController: UIViewController{
         let colorName = text
         let color: UIColor
         print(text)
-        
+
         switch colorName {
-        case "black":
-            color = UIColor.systemBlue
-        case "yellow":
-            color = UIColor.systemYellow
-        case "green":
-            color = UIColor.systemGreen
+            case "black":
+               // print("df")
+                color = UIColor.black
+            case "yellow":
+                color = UIColor.yellow
+            case "green":
+                color = UIColor.green
             // Add more cases for other color names
-        default:
-            color = UIColor.clear
+            default:
+                color = UIColor.clear
         }
         
         return color
@@ -152,14 +129,15 @@ class SingleExcerciseViewController: UIViewController{
         let headTitle = UILabel()
         headTitle.text = "30min"
         headTitle.textAlignment = .center
-        headTitle.textColor = .label
+        headTitle.backgroundColor = .clear
+        headTitle.textColor = .black
         headTitle.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         
         let subTitle = UILabel()
         subTitle.text = "Time"
         subTitle.textAlignment = .center
         subTitle.backgroundColor = .clear
-        subTitle.textColor = .systemGray
+        subTitle.textColor = .gray
         subTitle.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         
         
@@ -197,51 +175,33 @@ class SingleExcerciseViewController: UIViewController{
     }
     
     func addContraints(){
-        
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.bounds.height / 2),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
-        ])
-        
-        
-        NSLayoutConstraint.activate([
-            headerLable.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            headerLable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            headerLable.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            headerLable.topAnchor.constraint(equalTo: view.topAnchor, constant: view.bounds.height / 2 + 10),
+            headerLable.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            headerLable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             //headerLable.widthAnchor.constraint(equalToConstant: 300)
         ])
         NSLayoutConstraint.activate([
             smallLable.topAnchor.constraint(equalTo: headerLable.bottomAnchor, constant: 10),
-            smallLable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            smallLable.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
+            smallLable.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            smallLable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
             //smallLable.widthAnchor.constraint(equalToConstant: )
         ])
         
         NSLayoutConstraint.activate([
             cardView.topAnchor.constraint(equalTo: smallLable.bottomAnchor, constant: 10),
-            cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 6),
-            cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -6),
+            cardView.leadingAnchor.constraint(equalTo: smallLable.leadingAnchor, constant: 6),
+            cardView.trailingAnchor.constraint(equalTo: smallLable.trailingAnchor, constant: -6),
             //cardView.heightAnchor.constraint(equalToConstant: 250)
         ])
         
         
         NSLayoutConstraint.activate([
-            getStartedButton.topAnchor.constraint(equalTo: cardView.bottomAnchor, constant: 100),
-            getStartedButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            getStartedButton.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            getStartedButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             //getStartedButton.widthAnchor.constraint(equalToConstant: 300),
-            getStartedButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            getStartedButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            getStartedButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -80),
+            getStartedButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            getStartedButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             getStartedButton.heightAnchor.constraint(equalToConstant: 60)
         ])
         
@@ -256,33 +216,33 @@ class SingleExcerciseViewController: UIViewController{
         let playerItem = AVPlayerItem(asset: asset)
         player = AVQueuePlayer(playerItem: playerItem)
         looper = AVPlayerLooper(player: player, templateItem: playerItem)
-        
+
         // Create the layer for the video player
         playerLayer = AVPlayerLayer(player: player)
+
         
         
-        
-        
-        
+
+
         // Adjust the size and position of the layer to fill the view
         playerLayer.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height / 2)
         playerLayer.videoGravity = .resizeAspectFill
-        
+
         
         let maskLayer = CAShapeLayer()
         maskLayer.path = UIBezierPath(roundedRect: playerLayer.bounds,
-                                      byRoundingCorners: [.bottomLeft, .bottomRight],
-                                      cornerRadii: CGSize(width: 15.0, height: 15.0)).cgPath
+              byRoundingCorners: [.bottomLeft, .bottomRight],
+              cornerRadii: CGSize(width: 15.0, height: 15.0)).cgPath
         playerLayer.mask = maskLayer
+
         
-        
-        
+
         // Add the layer to the view's layer hierarchy
         view.layer.insertSublayer(playerLayer, at: 0)
-        
+
         // Play the video
         player.play()
-        
+
     }
     
     override func viewDidLayoutSubviews() {
@@ -291,15 +251,14 @@ class SingleExcerciseViewController: UIViewController{
         // Update the size and position of the layer when the view's size changes
         if(playerLayer != nil){
             playerLayer.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height / 2)
-            
+
         }
         
     }
     
-    @objc func openPopup(){
-        let popupVC = PopStartExcersiseViewController()
-        popupVC.modalPresentationStyle = .overFullScreen
-        present(popupVC, animated: false, completion: nil)
+    @objc private func goToLogin(){
+        let controller = LoginViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     

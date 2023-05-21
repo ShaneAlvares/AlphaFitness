@@ -385,6 +385,8 @@ class DashboardViewController: UIViewController {
         }
         
         popularWorkoutsCard.addSubview(productStack)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(gotoViewExcersiseDetailPage))
+        popularWorkoutsCard.addGestureRecognizer(tapGesture)
         
         NSLayoutConstraint.activate([
             productStack.topAnchor.constraint(equalTo: popularWorkoutsCard.topAnchor, constant: 0),
@@ -431,12 +433,22 @@ class DashboardViewController: UIViewController {
         icon.layer.borderColor = UIColor.gray.cgColor
         icon.layer.borderWidth = 2
         
-        let viewMoreBtn = UIImageView()
-        viewMoreBtn.contentMode = .scaleAspectFit
-        viewMoreBtn.clipsToBounds = true
-        viewMoreBtn.tintColor = .systemGray
+        //        let viewMoreBtn = UIImageView()
+        //        viewMoreBtn.contentMode = .scaleAspectFit
+        //        viewMoreBtn.clipsToBounds = true
+        //        viewMoreBtn.tintColor = .systemGray
+        //        viewMoreBtn.translatesAutoresizingMaskIntoConstraints = false
+        //        viewMoreBtn.image = UIImage(systemName: "arrow.forward.circle")
+        
+        let viewMoreBtn = UIButton()
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 24)
+        let symbolImage = UIImage(systemName: "arrow.forward.circle", withConfiguration: symbolConfiguration)
+        viewMoreBtn.setImage(symbolImage, for: .normal)
+        //viewMoreBtn.setImage(UIImage(systemName: "arrow.forward.circle"), for: .normal)
+        viewMoreBtn.tintColor =  .systemGray
         viewMoreBtn.translatesAutoresizingMaskIntoConstraints = false
-        viewMoreBtn.image = UIImage(systemName: "arrow.forward.circle")
+        viewMoreBtn.addTarget(self, action: #selector(gotoViewExcersiseDetailPage), for: .touchUpInside)
+        viewMoreBtn.backgroundColor = .clear
         
         
         let labelContainer = UIView()
@@ -473,6 +485,11 @@ class DashboardViewController: UIViewController {
         ])
         
         return labelContainer
+    }
+    
+    @objc func gotoViewExcersiseDetailPage(){
+        let controller = SingleExcerciseViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
 }
