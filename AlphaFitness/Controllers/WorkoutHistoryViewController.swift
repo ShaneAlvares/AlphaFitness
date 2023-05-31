@@ -125,7 +125,7 @@ class WorkoutHistoryViewController: UIViewController  {
     
     
     func addProductToStack(){
-        for i in ["Excersie 01", "Excersie 02", "Excersie 03", "Excersie 04", "Excersie 05", "Excersie 06"] {
+        for i in ["Push-ups", "Squats", "Lunges", "Plank", "Mountain climbers", "Burpees"] {
             let exerciseLayout = createExceriseLayout(with: (i))
             productStack.addArrangedSubview(exerciseLayout)
         }

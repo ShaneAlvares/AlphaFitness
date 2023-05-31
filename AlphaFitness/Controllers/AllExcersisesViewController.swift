@@ -27,7 +27,7 @@ class AllExcersisesViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     let pgName : UILabel = {
         let label = UILabel()
-        label.text = "Search Excersises"
+        label.text = "Search Exercise"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.label
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
@@ -39,7 +39,7 @@ class AllExcersisesViewController: UIViewController, UIPickerViewDelegate, UIPic
     let searchText : UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Seach for excersise"
+        textField.placeholder = "Seach for Exercise"
         textField.layer.backgroundColor = UIColor.systemFill.cgColor
         textField.layer.cornerRadius = 5
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20));
@@ -205,7 +205,7 @@ class AllExcersisesViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func addProductToStack(){
-        for i in ["Excersie 01", "Excersie 02", "Excersie 03", "Excersie 04", "Excersie 05", "Excersie 06"] {
+        for i in ["Push-ups", "Squats", "Lunges", "Plank", "Mountain climbers", "Burpees", "Jumping jacks","Bicycle crunches","Deadlifts","High knees"] {
             let exerciseLayout = createExceriseLayout(with: (i))
             productStack.addArrangedSubview(exerciseLayout)
         }
@@ -351,9 +351,11 @@ class AllExcersisesViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     @objc func openPopup(){
         print(self.view.bounds.height)
-        let popupVC = SingleExcerciseViewController()
-        popupVC.modalPresentationStyle = .overFullScreen
-        present(popupVC, animated: false, completion: nil)
+//        let popupVC = SingleExcerciseViewController()
+//        popupVC.modalPresentationStyle = .overFullScreen
+//        present(popupVC, animated: false, completion: nil)
+        let controller = SingleExcerciseViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     /*

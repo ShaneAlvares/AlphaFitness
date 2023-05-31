@@ -20,7 +20,7 @@ class PopAddScheduleExcersiseViewController: UIViewController ,UITableViewDelega
     
     let pgName : UILabel = {
         let label = UILabel()
-        label.text = "Add an Excersise"
+        label.text = "Add an Exercise"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.black
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
@@ -31,7 +31,7 @@ class PopAddScheduleExcersiseViewController: UIViewController ,UITableViewDelega
     
     let addExcerciseLabel : UILabel = {
         let label = UILabel()
-        label.text = "Selected Excercise: "
+        label.text = "Selected Exercise: "
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.black
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
@@ -40,11 +40,11 @@ class PopAddScheduleExcersiseViewController: UIViewController ,UITableViewDelega
         return label
     }()
     
-    let excerises = ["Excercise 01", "Excercise 02", "Excercise 03", "Excercise 04", "Excercise 05", "Excercise 07", "Excercise 08"]
+    let excerises = ["Push-ups", "Squats", "Lunges", "Plank", "Mountain climbers", "Burpees", "Jumping jacks","Bicycle crunches","Deadlifts","High knees"]
     
     let dropdownButton: UIButton = {
         let dropdownButton = UIButton(type: .system)
-        dropdownButton.setTitle("Select an Excercise", for: .normal)
+        dropdownButton.setTitle("Select an Exercise", for: .normal)
         dropdownButton.tintColor = .black
         dropdownButton.layer.cornerRadius = 3
         dropdownButton.addTarget(self, action: #selector(dropdownButtonTapped), for: .touchUpInside)
@@ -75,7 +75,7 @@ class PopAddScheduleExcersiseViewController: UIViewController ,UITableViewDelega
     let submitButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Add Excercise", for: .normal)
+        button.setTitle("Add Exercise", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .black
         button.layer.cornerRadius = 4

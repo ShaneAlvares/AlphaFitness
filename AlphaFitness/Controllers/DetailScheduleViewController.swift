@@ -145,7 +145,7 @@ class DetailScheduleViewController: UIViewController {
     
     
     func addProductToStack(){
-        for i in ["Excersice 01", "Excersice 02", "Excersice 03", "Excersice 04","Excersice 01", "Excersice 02", "Excersice 03", "Excersice 04"] {
+        for i in ["Push-ups", "Squats", "Lunges", "Plank", "Mountain climbers", "Burpees"] {
             let exerciseLayout = createExceriseLayout(with: (i))
             productStack.addArrangedSubview(exerciseLayout)
         }

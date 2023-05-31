@@ -122,6 +122,7 @@ class LoginViewController: UIViewController {
         view.addSubview(loginHeader)
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
+        view.addSubview(errorLabel)
         view.addSubview(loginButton)
         view.addSubview(divider)
         view.addSubview(signUpButton)
@@ -133,8 +134,6 @@ class LoginViewController: UIViewController {
     
     
     func setConstraints(){
-        
-        
         
         NSLayoutConstraint.activate([
             loginHeader.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
@@ -158,9 +157,15 @@ class LoginViewController: UIViewController {
             passwordTextField.heightAnchor.constraint(equalToConstant: 45)
         ])
         
+        NSLayoutConstraint.activate([
+            errorLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
+            errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+        ])
+        
         
         NSLayoutConstraint.activate([
-            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
+            loginButton.topAnchor.constraint(equalTo: errorLabel.bottomAnchor, constant: 30),
             loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             loginButton.heightAnchor.constraint(equalToConstant: 50)
@@ -198,11 +203,34 @@ class LoginViewController: UIViewController {
     
     
     @objc func loginButtonTapped() {
-//        if emailTextField.text == "" || passwordTextField.text == "" {
-//            errorLabel.text = "Please enter"
-//            errorLabel.isHidden = false
-//            return
-//        }
+        if emailTextField.text == "" || passwordTextField.text == "" {
+            errorLabel.text = "Please enter both email and the password"
+            errorLabel.isHidden = false
+            return
+        }
+        else{
+            errorLabel.isHidden = true
+            let authManger = AuthManager()
+            authManger.verifyLogin (email: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (status, error) in
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                } else {
+                    if let status = status {
+                        if status == "User Logged Successfully" {
+                            self.gotoHome()
+                        }else{
+                            self.errorLabel.text = "Please enter correct user email and password"
+                            self.errorLabel.isHidden = false
+                        }
+                       
+                    } else {
+                        self.errorLabel.text = "Please enter correct user email and password"
+                        self.errorLabel.isHidden = false
+                        //print("Failed to verify login")
+                    }
+                }
+            }
+        }
 //        if emailTextField.text == "example@email.com" && passwordTextField.text == "password" {
 //            // Successful login
 //            // You can navigate to the next screen here
@@ -231,9 +259,15 @@ class LoginViewController: UIViewController {
 //            }
 //        }
         //working function
-//        let authManager = AuthManager.shared
+//       let authManager = AuthManager.shared
 //        authManager.findUser()
-        gotoHome()
+        
+        
+        
+        
+        
+        
+        //gotoHome()
     }
     
     @objc func gotoHome(){

@@ -72,7 +72,7 @@ class SingleExcerciseViewController: UIViewController{
     let getStartedButton : UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("START EXCERSICE", for: .normal)
+        btn.setTitle("START EXERCISE", for: .normal)
         btn.setTitleShadowColor(UIColor.label, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: .semibold)
         btn.setTitleColor(UIColor.white, for: .normal)

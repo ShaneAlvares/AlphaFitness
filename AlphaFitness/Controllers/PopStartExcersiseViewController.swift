@@ -32,7 +32,7 @@ class PopStartExcersiseViewController: UIViewController  {
     
     let pgName : UILabel = {
         let label = UILabel()
-        label.text = "Add an Excersise"
+        label.text = "Exercise Started"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.black
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
@@ -60,7 +60,7 @@ class PopStartExcersiseViewController: UIViewController  {
     let submitButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("STOP EXCERSISE", for: .normal)
+        button.setTitle("STOP EXERCISE", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .red
         button.layer.cornerRadius = 10

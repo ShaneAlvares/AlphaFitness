@@ -233,8 +233,12 @@ class WeightSelectionViewController: UIViewController, UIPickerViewDataSource, U
     }
     
     @objc func gotoDashboard(){
-        let controller = DashboardViewController()
-        self.navigationController?.pushViewController(controller, animated: true)
+//        let controller = DashboardViewController()
+//        self.navigationController?.pushViewController(controller, animated: true)
+        let tabNavbar = BottomNavBarController()
+        let nav = UINavigationController(rootViewController: tabNavbar)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: false , completion: nil)
     }
     
     @objc func gotoHeightSelection(){

@@ -196,8 +196,6 @@ class DashboardViewController: UIViewController {
         
         
         addConstraints()
-        
-        
     }
     
     func addConstraints(){
@@ -379,10 +377,31 @@ class DashboardViewController: UIViewController {
     }
     
     func addProductToStack(){
-        for i in ["Excersie 01", "Excersie 02", "Excersie 03", "Excersie 04", "Excersie 05", "Excersie 06"] {
-            let exerciseLayout = createExceriseLayout(with: (i))
-            productStack.addArrangedSubview(exerciseLayout)
+        let excersieManger = ExcersiceManager()
+        excersieManger.findUser { (excersices, error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            } else {
+                if let excersices = excersices {
+                    if excersices.isEmpty {
+                        print("No excersices found")
+                    } else {
+                        for excersice in excersices {
+                            
+                            let exerciseLayout = self.createExceriseLayout(with: (excersice))
+                            self.productStack.addArrangedSubview(exerciseLayout)
+                        }
+                    }
+                } else {
+                    print("Failed to retrieve excersices")
+                }
+            }
         }
+        
+        //        for i in ["Push-ups", "Squats", "Lunges", "Plank", "Mountain climbers", "Burpees", "Jumping jacks","Bicycle crunches","Deadlifts","High knees"] {
+        //            let exerciseLayout = createExceriseLayout(with: (i))
+        //            productStack.addArrangedSubview(exerciseLayout)
+        //        }
         
         popularWorkoutsCard.addSubview(productStack)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(gotoViewExcersiseDetailPage))
